@@ -24,3 +24,4 @@ def clear_data():
 
 if __name__ == "__main__":
     print("Lancement du module __fonction__ en cours...")
+    print("Fin du module.")
