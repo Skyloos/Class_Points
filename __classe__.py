@@ -33,9 +33,24 @@ class Point:
         tortue.dot(3)
         tortue.write(str(self.name) + "\n" + "(" + str(self.x) + ";" + str(self.y) + ")")
         tortue.down()
+    def liage(self, *other):
+        """
+        Relie les points dans l'ordre des arguments
+        """
+        tortue = fonc.tortue()
+        tortue.up()
+        tortue.goto(self.x, self.y)
+        other = list(other)
+        for point in other:
+            tortue.down()
+            tortue.goto(point.x, point.y)
+            tortue.up()
+
 
 if __name__ == "__main__":
     print("Lancement du module __classe__ en cours...")
     fonc.repere(fonc.tortue())
-    a = Point("A", 50, 50)
+    a = Point()
+    a.random()
+    a.tracer()
     print("Fin du module.")
