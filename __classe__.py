@@ -47,9 +47,9 @@ class Point:
             tortue.up()
             fichier = open("data.txt", 'a')
             try:
-                fichier.write("[" + other[point-1].name + other[point].name + "]")
+                fichier.write("[" + other[point-1].name + other[point].name + "]" + "\n")
             except IndexError:
-                fichier.write("[" + self.name + other[point].name + "]")
+                fichier.write("[" + self.name + other[point].name + "]" + "\n")
             fichier.close()
 
 
