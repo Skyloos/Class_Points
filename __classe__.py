@@ -14,7 +14,7 @@ class Point:
         self.x = x
         self.y = y
         fichier = open("data.txt", 'a')
-        fichier.write(str(self.name), ": (", str(self.x), ";", ")\n")
+        fichier.write(str(self.name) + ": (", str(self.x) + ";" + ")\n")
         fichier.close()
     def random(self):
         """
