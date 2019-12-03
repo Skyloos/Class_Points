@@ -5,7 +5,7 @@ import turtle as ttl
 
 def tortue():
     """
-    Créé un tortue
+    Créé un tortue. C'est un lutin qui trace sur la fenetre
     """
     tortue = ttl.Turtle()
     return tortue
@@ -13,6 +13,8 @@ def tortue():
 def repere(tortue):
     """
     Trace un repère orthonormé
+    Argument:
+        tortue : Lutin traçant sur la fenetre
     """
     tortue.up()
     tortue.goto(0,100)
