@@ -33,7 +33,6 @@ class Point:
         tortue.dot(3)
         tortue.write(str(self.name) + "\n" + "(" + str(self.x) + ";" + str(self.y) + ")")
         tortue.down()
-        tortue.reset()
     def liage(self, *other):
         """
         Relie les points dans l'ordre des arguments
@@ -52,7 +51,6 @@ class Point:
             except IndexError:
                 fichier.write("[" + self.name + other[point].name + "]")
             fichier.close()
-        tortue.reset()
 
 
 if __name__ == "__main__":
