@@ -21,8 +21,8 @@ class Point:
         Redéfinit les caractéristiques du point aléatoirement
         """
         self.name = chr(rd.randint(65,90))
-        self.x = rd.randint(-400,400)
-        self.y = rd.randint(-400,400)
+        self.x = rd.randint(-250,250)
+        self.y = rd.randint(-250,250)
     def tracer(self):
         """
         Trace le point dans le repère
