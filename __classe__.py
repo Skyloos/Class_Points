@@ -41,10 +41,16 @@ class Point:
         tortue.up()
         tortue.goto(self.x, self.y)
         other = list(other)
-        for point in other:
+        for point in range(len(other)):
             tortue.down()
-            tortue.goto(point.x, point.y)
+            tortue.goto(other[point].x, other[point].y)
             tortue.up()
+            fichier = open("data.txt", 'a')
+            try:
+                fichier.write("[" + other[point-1].name + other[point].name + "]")
+            except IndexError:
+                fichier.write("[" + self.name + other[point].name + "]")
+            fichier.close()
 
 
 if __name__ == "__main__":
@@ -53,4 +59,7 @@ if __name__ == "__main__":
     a = Point()
     a.random()
     a.tracer()
+    b = Point()
+    b.random()
+    b.tracer()
     print("Fin du module.")
