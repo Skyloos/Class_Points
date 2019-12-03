@@ -1,15 +1,20 @@
-from turtle import up, goto, down, home
+import turtle as ttl
 
 def repere():
     """
     Trace un repère orthonormé
     """
-    up()
-    goto(0,100)
-    down()
-    home()
-    goto(100,0)
-    up()
+    ttl.up()
+    ttl.goto(0,100)
+    ttl.down()
+    ttl.home()
+    ttl.goto(100,0)
+    ttl.up()
+
+def clear_data():
+    fichier = open("data.txt", 'w')
+    fichier.write("")
+    fichier.close()
 
 if __name__ == "__main__":
     repere()
