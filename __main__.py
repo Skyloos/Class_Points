@@ -1,5 +1,6 @@
 from turtle import up, goto, down, home
 from time import sleep
+from __function__ import *
 
 class Point:
     def __init__(self,name = "", x= 0, y= 0):
@@ -16,17 +17,6 @@ class Point:
         up()
         goto(self.x, self.y)
         down()
-        
-def repere():
-    """
-    Trace un repère orthonormé
-    """
-    up()
-    goto(0,100)
-    down()
-    home()
-    goto(100,0)
-    up()
         
 repere()
 
