@@ -3,7 +3,7 @@ import __function__  as fonc
 import __classe__ as cl
 
 fonc.clear_data()
-fonc.repere()
+fonc.repere(fonc.tortue())
 a = cl.Point("A", 50, 50)
 a.tracer()
 
