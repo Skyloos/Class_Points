@@ -3,6 +3,7 @@ Ensemble des class utilisées dans __main__
 """
 import turtle as ttl
 import random as rd
+import __function__ as fonc
 
 class Point:
     def __init__(self,name = "", x= 0, y= 0):
@@ -26,13 +27,15 @@ class Point:
         """
         Trace le point dans le repère
         """
-        ttl.up()
-        ttl.goto(self.x, self.y)
-        ttl.dot(3)
-        ttl.write(str(self.name), "\n", "(", str(self.x), ";", str(self.y), ")")
-        ttl.down()
+        tortue.up()
+        tortue.goto(self.x, self.y)
+        tortue.dot(3)
+        tortue.write(str(self.name)+ "\n" + "(", str(self.x) + ";", str(self.y) + ")")
+        tortue.down()
 
 if __name__ == "__main__":
     print("Lancement du module __classe__ en cours...")
+    tortue = fonc.tortue()
+    fonc.repere(tortue)
     a = Point("A", 50, 50)
     print("Fin du module.")
