@@ -13,7 +13,11 @@ b = cl.Point()
 b.random()
 b.tracer()
 
-a.liage(b)
+c = cl.Point()
+c.random()
+c.tracer()
+
+a.liage(b,c,a)
 
 while 1:
     os.system("pause")
