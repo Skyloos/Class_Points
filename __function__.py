@@ -1,3 +1,6 @@
+"""
+Ensemble des fonctions utilisées dans __main__
+"""
 import turtle as ttl
 
 def repere():
@@ -12,9 +15,12 @@ def repere():
     ttl.up()
 
 def clear_data():
+    """
+    Efface les données écrites dans le fichier "data.txt"
+    """
     fichier = open("data.txt", 'w')
     fichier.write("")
     fichier.close()
 
 if __name__ == "__main__":
-    repere()
+    print("Lancement du module __fonction__ en cours...")
