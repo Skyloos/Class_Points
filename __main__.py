@@ -1,4 +1,3 @@
-from time import sleep
 import __function__  as fonc
 import __classe__ as cl
 import os
