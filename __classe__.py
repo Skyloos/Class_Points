@@ -31,7 +31,7 @@ class Point:
         tortue.up()
         tortue.goto(self.x, self.y)
         tortue.dot(3)
-        tortue.write(str(self.name)+ "\n" + "(" + str(self.x) + ";" + str(self.y) + ")")
+        tortue.write(str(self.name) + "\n" + "(" + str(self.x) + ";" + str(self.y) + ")")
         tortue.down()
 
 if __name__ == "__main__":
