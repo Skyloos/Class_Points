@@ -14,7 +14,7 @@ class Point:
         self.x = x
         self.y = y
         fichier = open("data.txt", 'a')
-        fichier.write(str(self.name) + ": (", str(self.x) + ";" + ")\n")
+        fichier.write(str(self.name) + ": (" + str(self.x) + ";" + ")\n")
         fichier.close()
     def random(self):
         """
@@ -27,6 +27,7 @@ class Point:
         """
         Trace le point dans le repère
         """
+        tortue = fonc.tortue()
         tortue.up()
         tortue.goto(self.x, self.y)
         tortue.dot(3)
@@ -35,7 +36,6 @@ class Point:
 
 if __name__ == "__main__":
     print("Lancement du module __classe__ en cours...")
-    tortue = fonc.tortue()
-    fonc.repere(tortue)
+    fonc.repere(fonc.tortue())
     a = Point("A", 50, 50)
     print("Fin du module.")
