@@ -27,6 +27,7 @@ class Point:
         Trace le point dans le repere
         """
         tortue = fonc.tortue()
+        tortue.speed("fastest")
         tortue.up()
         tortue.goto(self.x, self.y)
         tortue.dot(3)
@@ -40,6 +41,7 @@ class Point:
         Relie les points dans l'ordre des arguments
         """
         tortue = fonc.tortue()
+        tortue.speed("fastest")
         tortue.up()
         tortue.goto(self.x, self.y)
         other = list(other)
