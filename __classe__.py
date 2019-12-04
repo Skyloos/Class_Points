@@ -38,6 +38,7 @@ class Point:
         fichier = open("data.txt", 'a')
         fichier.write(str(self.name) + ": (" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")" + " m = " + str(self.masse) + "\n")
         fichier.close()
+        tortue.ht()
     def liage(self, *other):
         """
         Relie les points dans l'ordre des arguments
@@ -67,6 +68,7 @@ class Point:
                 segment = Segment(self, other[point])
                 fichier.write("[" + self.name + other[point].name + "] = " + str(segment.longueur()) + "\n")
             fichier.close()
+        tortue.ht()
     def milieu(self, *other):
         """
         Cree un point M qui est le milieu de plusieurs points
