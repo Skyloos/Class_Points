@@ -40,11 +40,13 @@ class Point:
         """
         Relie les points dans l'ordre des arguments
         """
+        other = list(other)
+        other.append(tuple(other[0]))
+        del other[0]
         tortue = fonc.tortue()
         tortue.speed("fastest")
         tortue.up()
         tortue.goto(self.x, self.y)
-        other = list(other)
         print(other)
         for point in range(len(other)):
             tortue.down()
