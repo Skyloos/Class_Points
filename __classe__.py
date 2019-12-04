@@ -54,6 +54,15 @@ class Point:
                 segment = Segment(self, other[point])
                 fichier.write("[" + self.name + other[point].name + "] = " + str(segment.longueur()) + "\n")
             fichier.close()
+    def milieu(self, *other):
+        other = list(other)
+        Milieu_x = (self.x + other[0].x) /2
+        Milieu_y = (self.y + other[0].y) /2
+        for point in range(len(other)-1):
+            Milieu_x = (Milieu_x + other[point].x) / point
+            Milieu_y = (Milieu_y + other[point].y) / point
+        Milieu = Point("M", Milieu_x, Milieu_y)
+        Milieu.tracer()
 
 
 class Segment:
