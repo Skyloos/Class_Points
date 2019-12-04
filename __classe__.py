@@ -91,6 +91,7 @@ class Point:
         Milieu_y /= (len(other)+1)
         Milieu_name += "]"
         Milieu = Point(Milieu_name, Milieu_x, Milieu_y)
+        #dictMilieu[str(Milieu_name)] = Milieu
         Milieu.tracer()
         return Milieu 
 
