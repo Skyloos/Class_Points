@@ -18,7 +18,7 @@ c.random()
 c.tracer()
 
 a.liage(b,c,a)
-a.milieu(b,c)
+c.milieu(b)
 
 while 1:
     os.system("pause")
