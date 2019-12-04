@@ -13,8 +13,8 @@ for point in range(1):
     liste.append(p)
 
 if len(liste) == 1:
-    liste[0].liage(liste[0])
-    liste[0].milieu(liste[0])
+    liste[0].liage(liste)
+    liste[0].milieu(liste)
 else:
     liste[0].liage(liste[1:-1])
     liste[0].milieu(liste[1:])
