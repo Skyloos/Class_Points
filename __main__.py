@@ -17,12 +17,8 @@ c = cl.Point()
 c.random()
 c.tracer()
 
-d = cl.Point()
-d.random()
-d.tracer()
-
-a.liage(b,c,d,a)
-a.milieu(b,c,d)
+a.liage(b,c,a)
+a.milieu(b,c)
 
 while 1:
     os.system("pause")
