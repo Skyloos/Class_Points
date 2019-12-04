@@ -60,7 +60,7 @@ class Point:
         Cree un point M qui est le milieu de plusieurs points
         """
         other = list(other)
-        Milieu_name = "M" + "[" + str(self.name) 
+        Milieu_name = "M" + "[" + str(self.name) + str(other[0].name)
         Milieu_x = self.x + other[0].x
         Milieu_y = self.y + other[0].y
         for point in range(len(other)-1):
