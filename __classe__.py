@@ -40,8 +40,9 @@ class Point:
         """
         Relie les points dans l'ordre des arguments
         """
-        if type(other[0]) == list():
+        if type(other[0]) == list:
             other = list(other[0])
+            print("other:", other)
         tortue = fonc.tortue()
         tortue.speed("fastest")
         tortue.up()
