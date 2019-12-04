@@ -48,10 +48,27 @@ class Point:
             tortue.up()
             fichier = open("data.txt", 'a')
             try:
-                fichier.write("[" + other[point-1].name + other[point].name + "] = " + str(round(math.sqrt((other[point].x - other[point-1].x)**2 + (other[point].y - other[point-1].y)**2), 2)) + "\n")
+                segment = Segment(other[point-1], other[point])
+                fichier.write("[" + other[point-1].name + other[point].name + "] = " + str(segment.longueur()) + "\n")
             except IndexError:
-                fichier.write("[" + self.name + other[point].name + "] = " + str(round(math.sqrt((self.x - other[point].x)**2 + (self.y - other[point].y)**2), 2)) + "\n")
+                segment = Segment(self, other[point])
+                fichier.write("[" + self.name + other[point].name + "] = " + str(segment.longueur()) + "\n")
             fichier.close()
+
+
+class Segment:
+    def __init__(self, point1, point2):
+        """
+        Definit les caracteristiques du point dans "self"
+        """
+        self.point1 = point1
+        self.point2 = point2
+    def longueur(self):
+        """
+        Envoie la longueur du segment
+        """
+        longueur = round(math.sqrt((self.point1.x - self.point2.x)**2 + (self.point1.y - self.point2.y)**2), 2)
+        return longueur
 
 
 if __name__ == "__main__":
