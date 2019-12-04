@@ -41,18 +41,14 @@ class Point:
         Relie les points dans l'ordre des arguments
         """
         other = list(other)
-        print(other)
-        print(type(other[0]))
         if type(other[0]) == list:
             otherKick = list(other[0])
             del other[0]
             for element in otherKick:
                 other.append(element)
-            print(other)
             firstElement = other[0]
             del other[0]
             other.append(firstElement)
-        print(other)
         tortue = fonc.tortue()
         tortue.speed("fastest")
         tortue.up()
