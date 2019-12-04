@@ -9,12 +9,10 @@ a = cl.Point()
 a.random()
 a.tracer()
 
-b = cl.Point()
-b.random()
+b = cl.Point("B", 129, 42)
 b.tracer()
 
-c = cl.Point()
-c.random()
+c = cl.Point("C", -169, 93)
 c.tracer()
 
 a.liage(b,c,a)
