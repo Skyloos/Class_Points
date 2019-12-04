@@ -12,6 +12,7 @@ for point in range(100):
     p.random()
     p.tracer()
     liste.append(p)
+"""
 for element in range(len(liste)):
     liste[element].liage(liste)
 """
@@ -21,7 +22,7 @@ if len(liste) == 1:
 else:
     liste[0].liage(liste[1:len(liste)], liste[0])
     liste[0].milieu(liste[1:])
-
+"""
 a = cl.Point()
 a.random()
 a.tracer()
