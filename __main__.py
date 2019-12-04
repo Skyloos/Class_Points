@@ -16,6 +16,8 @@ if len(liste) == 1:
     liste[0].liage(liste)
     liste[0].milieu(liste)
 else:
+    print(liste)
+    print(liste[1:-2])
     liste[0].liage(liste[1:-2], liste[0])
     liste[0].milieu(liste[1:])
 
