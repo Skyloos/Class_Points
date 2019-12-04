@@ -4,6 +4,7 @@ Ensemble des class utilisees dans __main__
 import turtle as ttl
 import random as rd
 import __function__ as fonc
+import math
 
 class Point:
     def __init__(self,name = "", x= 0, y= 0):
@@ -47,7 +48,7 @@ class Point:
             tortue.up()
             fichier = open("data.txt", 'a')
             try:
-                fichier.write("[" + other[point-1].name + other[point].name + "]" + "\n")
+                fichier.write("[" + other[point-1].name + other[point].name + "]" + str(math.sqrt((other[point].x - other[point-1].x)**2 + (other[point].y - other[point-1].y)**2))+ "\n")
             except IndexError:
                 fichier.write("[" + self.name + other[point].name + "]" + "\n")
             fichier.close()
