@@ -4,6 +4,7 @@ import os
 
 fonc.clear_data()
 fonc.repere(fonc.tortue())
+dictMilieu = fonc.dictionnary_milieu()
 """
 liste = []
 for point in range(4):
