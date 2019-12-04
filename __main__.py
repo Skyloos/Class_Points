@@ -19,5 +19,7 @@ c.tracer()
 
 a.liage(b,c,a)
 
+help(fonc)
+
 while 1:
     os.system("pause")
