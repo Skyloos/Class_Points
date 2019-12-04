@@ -42,7 +42,6 @@ class Point:
         """
         if type(other[0]) == list:
             other = list(other[0])
-            print("other:", other)
         tortue = fonc.tortue()
         tortue.speed("fastest")
         tortue.up()
@@ -63,8 +62,8 @@ class Point:
         """
         Cree un point M qui est le milieu de plusieurs points
         """
-        other = list(other[0])
-        print(other)
+        if type(other[0]) == list:
+            other = list(other[0])
         Milieu_name = "M" + "[" + str(self.name) + str(other[0].name)
         Milieu_x = self.x + other[0].x
         Milieu_y = self.y + other[0].y
