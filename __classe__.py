@@ -40,9 +40,7 @@ class Point:
         """
         Relie les points dans l'ordre des arguments
         """
-        other = list(other)
-        other.append(tuple(other[0]))
-        del other[0]
+        other = list(other[0])
         tortue = fonc.tortue()
         tortue.speed("fastest")
         tortue.up()
@@ -64,7 +62,8 @@ class Point:
         """
         Cree un point M qui est le milieu de plusieurs points
         """
-        other = list(other)
+        other = list(other[0])
+        print(other)
         Milieu_name = "M" + "[" + str(self.name) + str(other[0].name)
         Milieu_x = self.x + other[0].x
         Milieu_y = self.y + other[0].y
