@@ -31,6 +31,13 @@ def clear_data():
     fichier.write("")
     fichier.close()
 
+def dictionnary_milieu():
+    """
+    Cree un dictionnaire pour enregistrer les milieux sous la forme de {str(name): Point}
+    """
+    dictMilieu = {}
+    return dictMilieu
+
 if __name__ == "__main__":
     print("Lancement du module __fonction__ en cours...")
     tortue()
