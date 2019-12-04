@@ -1,5 +1,5 @@
 """
-Ensemble des class utilisées dans __main__
+Ensemble des class utilisees dans __main__
 """
 import turtle as ttl
 import random as rd
@@ -8,7 +8,7 @@ import __function__ as fonc
 class Point:
     def __init__(self,name = "", x= 0, y= 0):
         """
-        Définit les caractéristiques du point dans "self"
+        Definit les caracteristiques du point dans "self"
         """
         self.name = name
         self.x = x
@@ -18,14 +18,14 @@ class Point:
         fichier.close()
     def random(self):
         """
-        Redéfinit les caractéristiques du point aléatoirement
+        Redefinit les caracteristiques du point aleatoirement
         """
         self.name = chr(rd.randint(65,90))
         self.x = rd.randint(-250,250)
         self.y = rd.randint(-250,250)
     def tracer(self):
         """
-        Trace le point dans le repère
+        Trace le point dans le repere
         """
         tortue = fonc.tortue()
         tortue.up()
