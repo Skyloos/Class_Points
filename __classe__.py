@@ -7,13 +7,14 @@ import __function__ as fonc
 import math
 
 class Point:
-    def __init__(self,name = "", x= 0, y= 0):
+    def __init__(self,name = "", x= 0, y= 0, masse= 1):
         """
         Definit les caracteristiques du point dans "self"
         """
         self.name = name
         self.x = x
         self.y = y
+        self.masse = masse
     def random(self):
         """
         Redefinit les caracteristiques du point aleatoirement
@@ -21,6 +22,7 @@ class Point:
         self.name = chr(rd.randint(65,90))
         self.x = rd.randint(-250,250)
         self.y = rd.randint(-250,250)
+        self.masse = rd.randint(1,10)
         return(self)
     def tracer(self):
         """
@@ -31,10 +33,10 @@ class Point:
         tortue.up()
         tortue.goto(self.x, self.y)
         tortue.dot(3)
-        tortue.write(str(self.name) + "\n" + "(" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")")
+        tortue.write(str(self.name) + "\n" + "(" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")" + "\n" + "m = " + str(self.masse))
         tortue.down()
         fichier = open("data.txt", 'a')
-        fichier.write(str(self.name) + ": (" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")\n")
+        fichier.write(str(self.name) + ": (" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")" + " m = " + str(self.masse) + "\n")
         fichier.close()
     def liage(self, *other):
         """
