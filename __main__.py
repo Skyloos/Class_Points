@@ -9,25 +9,16 @@ a = cl.Point()
 a.random()
 a.tracer()
 
-b = cl.Point()
-b.random()
-b.tracer()
-
-c = cl.Point()
-c.random()
-c.tracer()
-
-d = cl.Point()
-d.random()
-d.tracer()
-
-e = cl.Point()
-e.random()
-e.tracer()
+liste = []
+for point in range(100):
+    p = cl.Point()
+    p.random()
+    p.tracer()
+    liste.append(p)
 
 
-a.liage(b,c,d,e,a)
-a.milieu(b,c,d,e)
+a.liage(liste, a)
+a.milieu(liste)
 
 while 1:
     os.system("pause")
