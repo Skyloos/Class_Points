@@ -45,7 +45,6 @@ class Point:
         tortue.speed("fastest")
         tortue.up()
         tortue.goto(self.x, self.y)
-        print(other)
         for point in range(len(other)):
             tortue.down()
             tortue.goto(other[point].x, other[point].y)
@@ -68,7 +67,6 @@ class Point:
         Milieu_x = self.x + other[0].x
         Milieu_y = self.y + other[0].y
         for point in range(len(other)-1):
-            print(other[point+1].name)
             Milieu_x += other[point+1].x
             Milieu_y += other[point+1].y
             Milieu_name += str(other[point+1].name)
