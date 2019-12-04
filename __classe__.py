@@ -31,7 +31,7 @@ class Point:
         tortue.up()
         tortue.goto(self.x, self.y)
         tortue.dot(3)
-        tortue.write(str(self.name) + "\n" + "(" + str(self.x) + ";" + str(self.y) + ")")
+        tortue.write(str(self.name) + "\n" + "(" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")")
         tortue.down()
         fichier = open("data.txt", 'a')
         fichier.write(str(self.name) + ": (" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")\n")
@@ -40,7 +40,8 @@ class Point:
         """
         Relie les points dans l'ordre des arguments
         """
-        other = list(other[0])
+        if type(other[0]) == list():
+            other = list(other[0])
         tortue = fonc.tortue()
         tortue.speed("fastest")
         tortue.up()
