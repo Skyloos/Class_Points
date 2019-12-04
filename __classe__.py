@@ -50,7 +50,7 @@ class Point:
             try:
                 fichier.write("[" + other[point-1].name + other[point].name + "] = " + str(round(math.sqrt((other[point].x - other[point-1].x)**2 + (other[point].y - other[point-1].y)**2), 2)) + "\n")
             except IndexError:
-                fichier.write("[" + self.name + other[point].name + "]" + "\n")
+                fichier.write("[" + self.name + other[point].name + "] = " + str(round(math.sqrt((self.x - other[point].x)**2 + (self.y - other[point].y)**2), 2)) + "\n")
             fichier.close()
 
 
