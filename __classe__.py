@@ -44,14 +44,14 @@ class Point:
         print(other)
         print(type(other[0]))
         if type(other[0]) == list:
-            other1 = list(other[0])
+            otherKick = list(other[0])
             del other[0]
-            for element in other1:
+            for element in otherKick:
                 other.append(element)
             print(other)
-            element1 = other[0]
+            firstElement = other[0]
             del other[0]
-            other.append(element1)
+            other.append(firstElement)
         print(other)
         tortue = fonc.tortue()
         tortue.speed("fastest")
