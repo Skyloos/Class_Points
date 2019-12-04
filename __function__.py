@@ -1,20 +1,20 @@
 """
-Ensemble des fonctions utilisées dans __main__
+Ensemble des fonctions utilisees dans __main__
 """
 import turtle as ttl
 
 def tortue():
     """
-    Créé un tortue. C'est un lutin qui trace sur la fenetre
+    Cree un tortue. C'est un lutin qui trace sur la fenetre
     """
     tortue = ttl.Turtle()
     return tortue
 
 def repere(tortue):
     """
-    Trace un repère orthonormé
+    Trace un repere orthonorme
     Argument:
-        tortue : Lutin traçant sur la fenetre
+        tortue : Lutin tracant sur la fenetre
     """
     tortue.up()
     tortue.goto(0,100)
@@ -25,7 +25,7 @@ def repere(tortue):
 
 def clear_data():
     """
-    Efface les données écrites dans le fichier "data.txt"
+    Efface les donnees écrites dans le fichier "data.txt"
     """
     fichier = open("data.txt", 'w')
     fichier.write("")
