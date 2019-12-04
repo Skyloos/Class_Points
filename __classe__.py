@@ -21,6 +21,7 @@ class Point:
         self.name = chr(rd.randint(65,90))
         self.x = rd.randint(-250,250)
         self.y = rd.randint(-250,250)
+        return(self)
     def tracer(self):
         """
         Trace le point dans le repere
@@ -55,16 +56,21 @@ class Point:
                 fichier.write("[" + self.name + other[point].name + "] = " + str(segment.longueur()) + "\n")
             fichier.close()
     def milieu(self, *other):
+        """
+        Cree un point M qui est le milieu de plusieurs points
+        """
         other = list(other)
+        Milieu_name = "M" + "[" + str(self.name) 
         Milieu_x = (self.x + other[0].x) /2
         Milieu_y = (self.y + other[0].y) /2
-        print(len(other))
         for point in range(len(other)):
-            print(point+1)
             Milieu_x = (Milieu_x + other[point].x) / (point+1)
             Milieu_y = (Milieu_y + other[point].y) / (point+1)
-        Milieu = Point("M", Milieu_x, Milieu_y)
+            Milieu_name += str(other[point].name)
+        Milieu_name += "]"
+        Milieu = Point(Milieu_name, Milieu_x, Milieu_y)
         Milieu.tracer()
+        return Milieu 
 
 
 class Segment:
