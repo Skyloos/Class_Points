@@ -6,15 +6,18 @@ fonc.clear_data()
 fonc.repere(fonc.tortue())
 
 liste = []
-for point in range(10):
+for point in range(1):
     p = cl.Point()
     p.random()
     p.tracer()
     liste.append(p)
 
-
-liste[0].liage(liste[1:-1])
-liste[0].milieu(liste[1:])
+if len(liste) == 1:
+    liste[0].liage(liste[0])
+    liste[0].milieu(liste[0])
+else:
+    liste[0].liage(liste[1:-1])
+    liste[0].milieu(liste[1:])
 
 while 1:
     os.system("pause")
