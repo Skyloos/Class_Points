@@ -33,7 +33,7 @@ class Point:
         tortue.write(str(self.name) + "\n" + "(" + str(self.x) + ";" + str(self.y) + ")")
         tortue.down()
         fichier = open("data.txt", 'a')
-        fichier.write(str(self.name) + ": (" + str(round(self.x), 1) + ";" + str(round(self.y), 1) + ")\n")
+        fichier.write(str(self.name) + ": (" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")\n")
         fichier.close()
     def liage(self, *other):
         """
@@ -64,8 +64,8 @@ class Point:
         Milieu_x = (self.x + other[0].x) /2
         Milieu_y = (self.y + other[0].y) /2
         for point in range(len(other)-1):
-            Milieu_x = (Milieu_x + other[point+1].x) / (point+2)
-            Milieu_y = (Milieu_y + other[point+1].y) / (point+2)
+            Milieu_x = (Milieu_x + other[point+1].x) / (point+1)
+            Milieu_y = (Milieu_y + other[point+1].y) / (point+1)
             Milieu_name += str(other[point+1].name)
         Milieu_name += "]"
         Milieu = Point(Milieu_name, Milieu_x, Milieu_y)
