@@ -69,8 +69,15 @@ class Point:
         """
         Cree un point M qui est le milieu de plusieurs points
         """
+        other = list(other)
         if type(other[0]) == list:
-            other = list(other[0])
+            otherKick = list(other[0])
+            del other[0]
+            for element in otherKick:
+                other.append(element)
+            firstElement = other[0]
+            del other[0]
+            other.append(firstElement)
         Milieu_name = "M" + "[" + str(self.name) + str(other[0].name)
         Milieu_x = self.x + other[0].x
         Milieu_y = self.y + other[0].y
