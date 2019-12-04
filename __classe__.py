@@ -48,7 +48,7 @@ class Point:
             tortue.up()
             fichier = open("data.txt", 'a')
             try:
-                fichier.write("[" + other[point-1].name + other[point].name + "]" + str(math.sqrt((other[point].x - other[point-1].x)**2 + (other[point].y - other[point-1].y)**2))+ "\n")
+                fichier.write("[" + other[point-1].name + other[point].name + "] = " + str(round(math.sqrt((other[point].x - other[point-1].x)**2 + (other[point].y - other[point-1].y)**2), 2)) + "\n")
             except IndexError:
                 fichier.write("[" + self.name + other[point].name + "]" + "\n")
             fichier.close()
