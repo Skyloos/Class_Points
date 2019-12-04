@@ -59,10 +59,10 @@ class Point:
         Milieu_x = (self.x + other[0].x) /2
         Milieu_y = (self.y + other[0].y) /2
         print(len(other))
-        for point in range(len(other)-1):
+        for point in range(len(other)):
             print(point+1)
-            Milieu_x = (Milieu_x + other[point+1].x) / (point+1)
-            Milieu_y = (Milieu_y + other[point+1].y) / (point+1)
+            Milieu_x = (Milieu_x + other[point].x) / (point+1)
+            Milieu_y = (Milieu_y + other[point].y) / (point+1)
         Milieu = Point("M", Milieu_x, Milieu_y)
         Milieu.tracer()
 
