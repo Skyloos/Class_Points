@@ -61,12 +61,15 @@ class Point:
         """
         other = list(other)
         Milieu_name = "M" + "[" + str(self.name) 
-        Milieu_x = (self.x + other[0].x) /2
-        Milieu_y = (self.y + other[0].y) /2
+        Milieu_x = self.x + other[0].x
+        Milieu_y = self.y + other[0].y
         for point in range(len(other)-1):
-            Milieu_x = (Milieu_x + other[point+1].x) / (point+1)
-            Milieu_y = (Milieu_y + other[point+1].y) / (point+1)
+            print(other[point+1].name)
+            Milieu_x += other[point+1].x
+            Milieu_y += other[point+1].y
             Milieu_name += str(other[point+1].name)
+        Milieu_x /= (len(other)+1)
+        Milieu_y /= (len(other)+1)
         Milieu_name += "]"
         Milieu = Point(Milieu_name, Milieu_x, Milieu_y)
         Milieu.tracer()
