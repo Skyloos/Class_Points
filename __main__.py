@@ -5,20 +5,29 @@ import os
 fonc.clear_data()
 fonc.repere(fonc.tortue())
 
-a = cl.Point("A", -100, -100)
+a = cl.Point()
+a.random()
 a.tracer()
 
-b = cl.Point("B", 100, -100)
+b = cl.Point()
+b.random()
 b.tracer()
 
-c = cl.Point("C", 100, 100)
+c = cl.Point()
+c.random()
 c.tracer()
 
-d = cl.Point("D", -100, 100)
+d = cl.Point()
+d.random()
 d.tracer()
 
-a.liage(b,c,d,a)
-a.milieu(b,c,d)
+e = cl.Point()
+e.random()
+e.tracer()
+
+
+a.liage(b,c,d,e,a)
+a.milieu(b,c,d,e)
 
 while 1:
     os.system("pause")
