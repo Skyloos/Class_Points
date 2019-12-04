@@ -5,20 +5,16 @@ import os
 fonc.clear_data()
 fonc.repere(fonc.tortue())
 
-a = cl.Point()
-a.random()
-a.tracer()
-
 liste = []
-for point in range(100):
+for point in range(10):
     p = cl.Point()
     p.random()
     p.tracer()
     liste.append(p)
 
 
-a.liage(liste, a)
-a.milieu(liste)
+liste[0].liage(liste[1:-1])
+liste[0].milieu(liste[1:])
 
 while 1:
     os.system("pause")
