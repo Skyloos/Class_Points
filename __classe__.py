@@ -14,9 +14,6 @@ class Point:
         self.name = name
         self.x = x
         self.y = y
-        fichier = open("data.txt", 'a')
-        fichier.write(str(self.name) + ": (" + str(self.x) + ";" + str(self.y) + ")\n")
-        fichier.close()
     def random(self):
         """
         Redefinit les caracteristiques du point aleatoirement
@@ -34,6 +31,9 @@ class Point:
         tortue.dot(3)
         tortue.write(str(self.name) + "\n" + "(" + str(self.x) + ";" + str(self.y) + ")")
         tortue.down()
+        fichier = open("data.txt", 'a')
+        fichier.write(str(self.name) + ": (" + str(self.x) + ";" + str(self.y) + ")\n")
+        fichier.close()
     def liage(self, *other):
         """
         Relie les points dans l'ordre des arguments
