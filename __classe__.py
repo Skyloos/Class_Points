@@ -45,6 +45,7 @@ class Point:
         tortue.up()
         tortue.goto(self.x, self.y)
         other = list(other)
+        print(other)
         for point in range(len(other)):
             tortue.down()
             tortue.goto(other[point].x, other[point].y)
