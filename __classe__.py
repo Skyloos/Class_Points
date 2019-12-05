@@ -69,7 +69,7 @@ class Point:
                 fichier.write("[" + self.name + other[point].name + "] = " + str(segment.longueur()) + "\n")
             fichier.close()
         tortue.ht()
-    def milieu(self, *other):
+    def milieu(self, dictMilieu, *other):
         """
         Cree un point M qui est le milieu de plusieurs points
         """
@@ -93,7 +93,7 @@ class Point:
         Milieu_y /= (len(other)+1)
         Milieu_name += "]"
         Milieu = Point(Milieu_name, Milieu_x, Milieu_y)
-        #dictMilieu[str(Milieu_name)] = Milieu
+        dictMilieu[str(Milieu_name)] = Milieu
         Milieu.tracer()
         return Milieu 
 
