@@ -20,8 +20,8 @@ class Point:
         Redefinit les caracteristiques du point aleatoirement
         """ 
         nameNumber = rd.randint(0, len(nameList))
-        del nameList[nameList.index(nameNumber)]
-        self.name = nameList[nameNumber]
+        self.name = nameList[nameNumber-1]
+        del nameList[nameNumber-1]
         self.x = rd.randint(-250,250)
         self.y = rd.randint(-250,250)
         self.masse = rd.randint(1,10)
