@@ -18,9 +18,8 @@ class Point:
     def random(self, nameList):
         """
         Redefinit les caracteristiques du point aleatoirement
-        """
-        nameIndex = rd.randint(0, len(nameList))
-        self.name = nameList[nameIndex]
+        """ 
+        self.name = nameList[rd.randint(0, len(nameList))]
         self.x = rd.randint(-250,250)
         self.y = rd.randint(-250,250)
         self.masse = rd.randint(1,10)
