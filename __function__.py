@@ -40,16 +40,19 @@ def dictionnary_milieu():
 
 def liste_name(number):
     nameList = [i for i in range(number)]
+    interList = []
     for element in nameList:
         i = 0
-        while element > 26:
+        while element > 25:
             element -= 26
             i += 1
         element = chr(element+65) + str(i)
-    print(nameList)
+        interList.append(element)
+    nameList = interList
     return nameList
 
 if __name__ == "__main__":
     print("Lancement du module __fonction__ en cours...")
-    nameList = liste_name(100)
+    nameList = liste_name(104)
+    print(nameList)
     print("Fin du module.")
