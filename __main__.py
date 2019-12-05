@@ -7,10 +7,10 @@ fonc.repere(fonc.tortue())
 dictMilieu = fonc.dictionnary_milieu()
 
 liste = []
-r = fonc.liste_name(10)
+nameList = fonc.liste_name(10)
 for point in range(10):
     p = cl.Point()
-    p.random(r)
+    p.random(nameList)
     p.tracer()
     liste.append(p)
 """
