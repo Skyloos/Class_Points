@@ -9,7 +9,7 @@ dictMilieu = fonc.dictionnary_milieu()
 liste = []
 for point in range(10):
     p = cl.Point()
-    p.random(fonc.liste_name(26))
+    p.random(fonc.liste_name(10))
     p.tracer()
     liste.append(p)
 """
