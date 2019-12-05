@@ -38,6 +38,10 @@ def dictionnary_milieu():
     dictMilieu = {}
     return dictMilieu
 
+def liste_name(number):
+    nameList = [chr(i+65) for i in range(number)]
+    return nameList
+
 if __name__ == "__main__":
     print("Lancement du module __fonction__ en cours...")
     tortue()
