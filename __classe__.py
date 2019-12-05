@@ -15,11 +15,12 @@ class Point:
         self.x = x
         self.y = y
         self.masse = masse
-    def random(self):
+    def random(self, nameList):
         """
         Redefinit les caracteristiques du point aleatoirement
         """
-        self.name = chr(rd.randint(65,90))
+        nameIndex = rd.randint(0, len(nameList))
+        self.name = nameList[nameIndex]
         self.x = rd.randint(-250,250)
         self.y = rd.randint(-250,250)
         self.masse = rd.randint(1,10)
@@ -115,11 +116,4 @@ class Segment:
 
 if __name__ == "__main__":
     print("Lancement du module __classe__ en cours...")
-    fonc.repere(fonc.tortue())
-    a = Point()
-    a.random()
-    a.tracer()
-    b = Point()
-    b.random()
-    b.tracer()
     print("Fin du module.")
