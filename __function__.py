@@ -39,11 +39,17 @@ def dictionnary_milieu():
     return dictMilieu
 
 def liste_name(number):
-    nameList = [chr(i+65) for i in range(number)]
+    nameList = [i for i in range(number)]
+    i = 0
+    for element in nameList:
+        while element > 26:
+            element -= 26
+            i += 1
+        element = chr(element+65) + str(i)
     return nameList
 
 if __name__ == "__main__":
     print("Lancement du module __fonction__ en cours...")
-    tortue()
-    repere(tortue())
+    nameList = liste_name(26)
+    print(nameList)
     print("Fin du module.")
