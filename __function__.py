@@ -31,12 +31,12 @@ def clear_data():
     fichier.write("")
     fichier.close()
 
-def dictionnary_milieu():
+def dictionnary_point():
     """
-    Cree un dictionnaire pour enregistrer les milieux sous la forme de {str(name): Point}
+    Cree un dictionnaire pour enregistrer les points sous la forme de {str(name): Point}
     """
-    dictMilieu = {}
-    return dictMilieu
+    dictPoint = {}
+    return dictPoint
 
 def liste_name(number):
     nameList = [i for i in range(number)]
