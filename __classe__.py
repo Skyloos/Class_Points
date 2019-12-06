@@ -103,7 +103,7 @@ class Point:
         return Milieu
     def barycentre(self, dictPoint, *other):
         """
-        Cree un point M qui est le milieu de plusieurs points
+        Cree un point G qui est le barycentre de plusieurs points
         """
         other = list(other)
         if type(other[0]) == list:
