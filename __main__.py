@@ -4,12 +4,13 @@ import os
 
 fonc.clear_data()
 fonc.repere(fonc.tortue())
-dictMilieu = fonc.dictionnary_milieu()
+dictPoint = fonc.dictionnary_point()
 
 liste = []
 nameList = fonc.liste_name(10)
 for point in range(10):
     p = cl.Point()
+    dictPoint[str(p.name)] = p
     p.random(nameList)
     p.tracer()
     liste.append(p)
@@ -22,7 +23,7 @@ if len(liste) == 1:
     liste[0].milieu(liste)
 else:
     liste[0].liage(liste[1:len(liste)], liste[0])
-    liste[0].milieu(dictMilieu, liste[1:])
+    liste[0].milieu(dictPoint, liste[1:])
 """
 a = cl.Point()
 a.random()
@@ -34,5 +35,6 @@ b.tracer()
 
 a.liage(b)
 """
+print(dictPoint)
 while 1:
     os.system("pause")
