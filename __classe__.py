@@ -101,6 +101,35 @@ class Point:
         dictPoint[str(Milieu_name)] = Milieu
         Milieu.tracer()
         return Milieu
+    def barycentre(self, dictPoint, *other):
+        """
+        Cree un point M qui est le milieu de plusieurs points
+        """
+        other = list(other)
+        if type(other[0]) == list:
+            otherKick = list(other[0])
+            del other[0]
+            for element in otherKick:
+                other.append(element)
+            firstElement = other[0]
+            del other[0]
+            other.append(firstElement)
+        Bary_name = "G" + "[" + str(self.name) + str(other[0].name)
+        Bary_x = (self.x*self.masse) + (other[0].x*other[0].masse)
+        Bary_y = (self.y*self.masse) + (other[0].y*other[0].masse)
+        diviseur = self.masse + other[0].masse
+        for point in range(len(other)-1):
+            Bary_x += (other[point+1].x*other[point+1].masse)
+            Bary_y += (other[point+1].y*other[point+1].masse)
+            diviseur += other[point+1].masse
+            Bary_name += str(other[point+1].name)
+        Bary_x /= diviseur
+        Bary_y /= diviseur
+        Bary_name += "]"
+        Bary = Point(dictPoint, Bary_name, Bary_x, Bary_y)
+        dictPoint[str(Bary_name)] = Bary
+        Bary.tracer()
+        return Bary
 
 
 class Segment:
