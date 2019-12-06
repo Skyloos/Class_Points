@@ -7,7 +7,7 @@ import __function__ as fonc
 import math
 
 class Point:
-    def __init__(self,name = "", x= 0, y= 0, masse= 1):
+    def __init__(self, dictPoint= {}, name = "", x= 0, y= 0, masse= 1):
         """
         Definit les caracteristiques du point dans "self"
         """
@@ -15,7 +15,9 @@ class Point:
         self.x = x
         self.y = y
         self.masse = masse
-    def random(self, nameList):
+        if self.name != "":
+            dictPoint[self.name] = self
+    def random(self, nameList, dictPoint):
         """
         Redefinit les caracteristiques du point aleatoirement
         """ 
@@ -25,6 +27,7 @@ class Point:
         self.x = rd.randint(-250,250)
         self.y = rd.randint(-250,250)
         self.masse = rd.randint(1,10)
+        dictPoint[str(self.name)] = self
         return(self)
     def tracer(self):
         """
@@ -94,7 +97,7 @@ class Point:
         Milieu_x /= (len(other)+1)
         Milieu_y /= (len(other)+1)
         Milieu_name += "]"
-        Milieu = Point(Milieu_name, Milieu_x, Milieu_y)
+        Milieu = Point(dictPoint, Milieu_name, Milieu_x, Milieu_y)
         dictPoint[str(Milieu_name)] = Milieu
         Milieu.tracer()
         return Milieu
