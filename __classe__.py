@@ -75,7 +75,7 @@ class Point:
                 fichier.write("[" + self.name + other[point].name + "] = " + str(segment.longueur()) + "\n")
             fichier.close()
         tortue.ht()
-    def milieu(self, dictPoint, *other):
+    def milieu(self, dictPoint, information= "O", *other):
         """
         Cree un point M qui est le milieu de plusieurs points
         """
@@ -100,9 +100,9 @@ class Point:
         Milieu_name += "]"
         Milieu = Point(dictPoint, Milieu_name, Milieu_x, Milieu_y)
         dictPoint[str(Milieu_name)] = Milieu
-        Milieu.tracer()
+        Milieu.tracer(information)
         return Milieu
-    def barycentre(self, dictPoint, *other):
+    def barycentre(self, dictPoint, information= "O", *other):
         """
         Cree un point G qui est le barycentre de plusieurs points
         """
@@ -129,7 +129,7 @@ class Point:
         Bary_name += "]"
         Bary = Point(dictPoint, Bary_name, Bary_x, Bary_y)
         dictPoint[str(Bary_name)] = Bary
-        Bary.tracer()
+        Bary.tracer(information)
         return Bary
 
 
