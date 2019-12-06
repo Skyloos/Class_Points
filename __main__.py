@@ -9,9 +9,8 @@ dictPoint = fonc.dictionnary_point()
 liste = []
 nameList = fonc.liste_name(10)
 for point in range(10):
-    p = cl.Point()
-    dictPoint[str(p.name)] = p
-    p.random(nameList)
+    p = cl.Point(dictPoint)
+    p.random(nameList, dictPoint)
     p.tracer()
     liste.append(p)
 """
