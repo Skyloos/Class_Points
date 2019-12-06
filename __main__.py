@@ -11,7 +11,7 @@ liste = []
 for point in range(3):
     p = cl.Point(dictPoint)
     p.random(nameList, dictPoint)
-    p.tracer()
+    p.tracer("N")
     liste.append(p)
 
 
