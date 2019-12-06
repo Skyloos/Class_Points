@@ -29,7 +29,7 @@ class Point:
         self.masse = rd.randint(1,10)
         dictPoint[str(self.name)] = self
         return(self)
-    def tracer(self):
+    def tracer(self, information= "O"):
         """
         Trace le point dans le repere
         """
@@ -38,7 +38,8 @@ class Point:
         tortue.up()
         tortue.goto(self.x, self.y)
         tortue.dot(3)
-        tortue.write(str(self.name) + "\n" + "(" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")" + "\n" + "m = " + str(self.masse))
+        if information == "O":
+            tortue.write(str(self.name) + "\n" + "(" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")" + "\n" + "m = " + str(self.masse))
         tortue.down()
         fichier = open("data.txt", 'a')
         fichier.write(str(self.name) + ": (" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")" + " m = " + str(self.masse) + "\n")
