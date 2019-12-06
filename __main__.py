@@ -22,6 +22,7 @@ else:
     liste[0].liage(liste[1:len(liste)], liste[0])
     liste[0].barycentre(dictPoint, "N", liste[1:])
 
+
 print(dictPoint)
 
 while 1:
