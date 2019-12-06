@@ -39,6 +39,9 @@ def dictionnary_point():
     return dictPoint
 
 def liste_name(number):
+    """
+    Cree une liste de noms de points en fonction de number qui est le nombre de noms qui sera mis dans la liste
+    """
     nameList = [i for i in range(number)]
     interList = []
     for element in nameList:
