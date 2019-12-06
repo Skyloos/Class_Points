@@ -37,7 +37,7 @@ class Point:
         tortue.speed("fastest")
         tortue.up()
         tortue.goto(self.x, self.y)
-        tortue.dot(3)
+        tortue.dot(5)
         if information == "O":
             tortue.write(str(self.name) + "\n" + "(" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")" + "\n" + "m = " + str(self.masse))
         tortue.down()
