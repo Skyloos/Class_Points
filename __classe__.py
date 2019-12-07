@@ -29,6 +29,33 @@ class Point:
         self.masse = rd.randint(1,10)
         dictPoint[str(self.name)] = self
         return(self)
+    def random_name(self, nameList):
+        """
+        Redefinit le nom du point aléatoirement
+        """
+        nameNumber = rd.randint(0, len(nameList))
+        self.name = nameList[nameNumber-1]
+        del nameList[nameNumber-1]
+        return self
+    def random_x(self):
+        """
+        Redefinit l'abscisse du point aléatoirement
+        """
+        self.x = rd.randint(-250,250)
+        return self
+    def random_x(self):
+        """
+        Redefinit l'ordonnee du point aléatoirement
+        """
+        self.y = rd.randint(-250,250)
+        return self
+    def random_masse(self):
+        """
+        Redefinit la masse du point aléatoirement
+        """
+        self.masse = rd.randint(1,10)
+        return self
+    
     def tracer(self, information= "O"):
         """
         Trace le point dans le repere
