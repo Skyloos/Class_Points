@@ -100,10 +100,10 @@ class Point:
             tortue.up()
             fichier = open("data.txt", 'a')
             if len(other) > 2:
-                segment = Segment(other[point-1], other[point])
+                segment = cs.Segment(other[point-1], other[point])
                 fichier.write("[" + other[point-1].name + other[point].name + "] = " + str(segment.longueur()) + "\n")
             elif len(other) <= 2:
-                segment = Segment(self, other[point])
+                segment = cs.Segment(self, other[point])
                 fichier.write("[" + self.name + other[point].name + "] = " + str(segment.longueur()) + "\n")
             fichier.close()
         tortue.ht()
