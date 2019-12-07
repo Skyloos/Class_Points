@@ -11,7 +11,8 @@ nameList = fonc.liste_name(4)
 liste = []
 for point in range(4):
     print(nameList)
-    p = cl.Point(dictPoint, nameList[rd.randint(0,4-point)], 100*point, 100*point)
+    p = cl.Point(dictPoint, "", 100*point, 100*point)
+    p.random_name(nameList, dictPoint)
     #p.random(nameList, dictPoint)
     p.tracer("N")
     liste.append(p)
@@ -24,8 +25,6 @@ else:
     liste[0].liage(liste[1:len(liste)], liste[0])
     liste[0].milieu(dictPoint, "O", liste[1:])
 
-
-print(dictPoint)
 
 while 1:
     os.system("pause")
