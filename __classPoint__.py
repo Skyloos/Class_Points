@@ -4,6 +4,7 @@ Ensemble des class utilisees dans __main__
 import turtle as ttl
 import random as rd
 import __function__ as fonc
+import __classSegment__ as cs
 import math
 import os
 
@@ -164,22 +165,6 @@ class Point:
         return Bary
 
 
-class Segment(Point):
-    def __init__(self, point1, point2):
-        """
-        Definit les caracteristiques du point dans "self"
-        """
-        self.point1 = point1
-        self.point2 = point2
-        self.x1, self.x2, self.y1, self.y2 = self.point1.x, self.point2.x, self.point1.y, self.point2.y
-    def longueur(self):
-        """
-        Envoie la longueur du segment
-        """
-        longueur = round(math.sqrt((self.x1 - self.x2)**2 + (self.y1 - self.y2)**2), 2)
-        return longueur
-
-
 if __name__ == "__main__":
     print("Lancement du module __classe__ en cours...")
     fonc.clear_data()
@@ -192,7 +177,7 @@ if __name__ == "__main__":
     b.random(nameList, dictPoint)
     b.tracer()
     a.liage(b)
-    AB = Segment(a,b)
+    AB = cs.Segment(a,b)
     longueur = AB.longueur()
     print(longueur)
     print("Fin du module.")
