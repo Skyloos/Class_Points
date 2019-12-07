@@ -1,5 +1,5 @@
 import __function__  as fonc
-import __classe__ as cl
+import __classPoint__ as cp
 import os
 import random as rd
 
@@ -11,7 +11,7 @@ nameList = fonc.liste_name(10)
 liste = []
 for point in range(10):
     print(nameList)
-    p = cl.Point(dictPoint)
+    p = cp.Point(dictPoint)
     #p.random_name(nameList, dictPoint)
     p.random(nameList, dictPoint)
     p.tracer("N")
