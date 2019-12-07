@@ -56,6 +56,6 @@ def liste_name(number):
 
 if __name__ == "__main__":
     print("Lancement du module __fonction__ en cours...")
-    nameList = liste_name(104)
+    nameList = liste_name(10)
     print(nameList)
     print("Fin du module.")
