@@ -1,5 +1,6 @@
 import __function__  as fonc
-import __classPoint__ as cp
+import __Point__ as cp
+import __Segment__ as cs
 import os
 import random as rd
 
