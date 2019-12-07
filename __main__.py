@@ -6,10 +6,10 @@ import random as rd
 fonc.clear_data()
 fonc.repere(fonc.tortue())
 dictPoint = fonc.dictionnary_point()
-nameList = fonc.liste_name(4)
+nameList = fonc.liste_name(10)
 
 liste = []
-for point in range(4):
+for point in range(10):
     print(nameList)
     p = cl.Point(dictPoint)
     #p.random_name(nameList, dictPoint)
@@ -23,7 +23,7 @@ if len(liste) == 1:
     liste[0].milieu(dictPoint, "N", liste)
 else:
     liste[0].liage(liste[1:len(liste)], liste[0])
-    liste[0].milieu(dictPoint, "O", liste[1:])
+    liste[0].milieu(dictPoint, "N", liste[1:])
 
 
 while 1:
