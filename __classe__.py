@@ -17,6 +17,7 @@ class Point:
         self.masse = masse
         if self.name != "":
             dictPoint[self.name] = self
+            print(dictPoint)
     def random(self, nameList, dictPoint):
         """
         Redefinit les caracteristiques du point aleatoirement
@@ -29,31 +30,35 @@ class Point:
         self.masse = rd.randint(1,10)
         dictPoint[str(self.name)] = self
         return(self)
-    def random_name(self, nameList):
+    def random_name(self, nameList, dictPoint):
         """
         Redefinit le nom du point aléatoirement
         """
         nameNumber = rd.randint(0, len(nameList))
         self.name = nameList[nameNumber-1]
         del nameList[nameNumber-1]
+        dictPoint[str(self.name)] = self
         return self
-    def random_x(self):
+    def random_x(self, dictPoint):
         """
         Redefinit l'abscisse du point aléatoirement
         """
         self.x = rd.randint(-250,250)
+        dictPoint[str(self.name)] = self
         return self
-    def random_x(self):
+    def random_x(self, dictPoint):
         """
         Redefinit l'ordonnee du point aléatoirement
         """
         self.y = rd.randint(-250,250)
+        dictPoint[str(self.name)] = self
         return self
-    def random_masse(self):
+    def random_masse(self, dictPoint):
         """
         Redefinit la masse du point aléatoirement
         """
         self.masse = rd.randint(1,10)
+        dictPoint[str(self.name)] = self
         return self
     
     def tracer(self, information= "O"):
