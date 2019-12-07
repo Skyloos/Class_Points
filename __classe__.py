@@ -5,6 +5,7 @@ import turtle as ttl
 import random as rd
 import __function__ as fonc
 import math
+import os
 
 class Point:
     def __init__(self, dictPoint= {}, name = "", x= 0, y= 0, masse= 1):
@@ -15,9 +16,7 @@ class Point:
         self.x = x
         self.y = y
         self.masse = masse
-        if self.name != "":
-            dictPoint[self.name] = self
-            print(dictPoint)
+        dictPoint[self.name] = self
     def random(self, nameList, dictPoint):
         """
         Redefinit les caracteristiques du point aleatoirement
@@ -99,10 +98,10 @@ class Point:
             tortue.goto(other[point].x, other[point].y)
             tortue.up()
             fichier = open("data.txt", 'a')
-            try:
+            if len(other) > 2:
                 segment = Segment(other[point-1], other[point])
                 fichier.write("[" + other[point-1].name + other[point].name + "] = " + str(segment.longueur()) + "\n")
-            except IndexError:
+            elif len(other) <= 2:
                 segment = Segment(self, other[point])
                 fichier.write("[" + self.name + other[point].name + "] = " + str(segment.longueur()) + "\n")
             fichier.close()
@@ -165,21 +164,37 @@ class Point:
         return Bary
 
 
-class Segment:
+class Segment(Point):
     def __init__(self, point1, point2):
         """
         Definit les caracteristiques du point dans "self"
         """
         self.point1 = point1
         self.point2 = point2
+        self.x1, self.x2, self.y1, self.y2 = self.point1.x, self.point2.x, self.point1.y, self.point2.y
     def longueur(self):
         """
         Envoie la longueur du segment
         """
-        longueur = round(math.sqrt((self.point1.x - self.point2.x)**2 + (self.point1.y - self.point2.y)**2), 2)
+        longueur = round(math.sqrt((self.x1 - self.x2)**2 + (self.y1 - self.y2)**2), 2)
         return longueur
 
 
 if __name__ == "__main__":
     print("Lancement du module __classe__ en cours...")
+    fonc.clear_data()
+    dictPoint = fonc.dictionnary_point()
+    nameList = fonc.liste_name(2)
+    a = Point(dictPoint)
+    a.random(nameList, dictPoint)
+    a.tracer()
+    b = Point(dictPoint)
+    b.random(nameList, dictPoint)
+    b.tracer()
+    a.liage(b)
+    AB = Segment(a,b)
+    longueur = AB.longueur()
+    print(longueur)
     print("Fin du module.")
+    while 1:
+        os.system("pause")
