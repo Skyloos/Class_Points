@@ -54,7 +54,7 @@ def liste_name(number):
     nameList = interList
     return nameList
 
-def arrondi(number):
+def int_decimal(number):
     """
     Permet de transformer un float en int ssi les decimales sont egales à 0
     """
