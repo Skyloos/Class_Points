@@ -38,6 +38,13 @@ def dictionnary_point():
     dictPoint = {}
     return dictPoint
 
+def dictionnary_vecteur():
+    """
+    Cree un dictionnaire pour enregistrer les vecteurs sous la forme de {str(name): Vecteur}
+    """
+    dictVecteur = {}
+    return dictVecteur
+
 def liste_name(number):
     """
     Cree une liste de noms de points en fonction de number qui est le nombre de noms qui sera mis dans la liste
