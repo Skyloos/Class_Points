@@ -10,7 +10,7 @@ class Vecteur:
         return "({0},{1})".format(self.x, self.y)
     def __add__(self, other):
         return Vecteur(self.x + other.x, self.y + other.y)
-    def colinéaire(self, other):
+    def colineaire(self, other):
         try:
             k = [self.x/other.x, self.y/other.y]
         except ZeroDivisionError:
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     print("Lancement du module __classe__ en cours...")
     a = Vecteur(15,6)
     b = Vecteur(2,5)
-    print(b.colinéaire(a))
+    print(b.colineaire(a))
     #print(a.produit_scalaire(b))
     #print(b.produit_scalaire(a))
     print("Fin du module.")
