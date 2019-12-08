@@ -4,7 +4,8 @@ import turtle as ttl
 import __function__ as fonc
 
 class Vecteur:
-    def __init__(self, x, y):
+    def __init__(self, name="", x=0, y=0):
+        self.name = name
         self.x = x
         self.y = y
         self.norme = math.sqrt((self.x)**2 + (self.y)**2)
@@ -30,6 +31,9 @@ class Vecteur:
             tortue.left(self.angle_degree(Vecteur(100,0)))
         if self.y < 0:
             tortue.right(self.angle_degree(Vecteur(100,0)))
+        fichier = open("data.txt", 'a')
+        fichier.write("V[" + str(self.name) + "] : (" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")" + "\n")
+        fichier.close()
     def colineaire(self, other):
         """
         Verifie si deux vecteurs sont colinéaires, renvoie True si c'est vrai, sinon renvoie False
