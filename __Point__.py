@@ -5,6 +5,7 @@ import turtle as ttl
 import random as rd
 import __function__ as fonc
 import __Segment__ as cs
+import __Vecteur__ as cv
 import math
 import os
 
