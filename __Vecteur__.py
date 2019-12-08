@@ -33,7 +33,7 @@ class Vecteur:
         print(self.norme**2)
         print(other.norme**2)
         produitScalaire = 1/2*(self.norme**2 + other.norme**2 - ((self+other).norme)**2) 
-        return produitScalaire
+        return fonc.int_decimal(produitScalaire)
 
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
