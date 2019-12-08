@@ -55,15 +55,18 @@ class Vecteur:
         tortue = fonc.tortue()
         tortue.up()
         tortue.home()
-        tortue.left(self.angle_degree(Vecteur(100,0)))
         tortue.down()
         tortue.goto(self.x,self.y)
         tortue.up()
+        if self.y >= 0:
+            tortue.left(self.angle_degree(Vecteur(100,0)))
+        if self.y < 0:
+            tortue.right(self.angle_degree(Vecteur(100,0)))
 
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
-    a = Vecteur(-40,20)
-    b = Vecteur(50,100)
+    a = Vecteur(20,100)
+    b = Vecteur(100,0)
     a.tracage()
     b.tracage()
     print(a.angle_degree(b))
