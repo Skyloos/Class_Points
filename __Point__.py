@@ -169,7 +169,7 @@ class Point:
 
 
 if __name__ == "__main__":
-    print("Lancement du module __classe__ en cours...")
+    print("Lancement du module __Point__ en cours...")
     fonc.clear_data()
     dictPoint = fonc.dictionnary_point()
     nameList = fonc.liste_name(2)
