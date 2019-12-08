@@ -21,6 +21,7 @@ class Vecteur:
         del nameList[nameNumber-1]
         self.x = rd.randint(-250,250)
         self.y = rd.randint(-250,250)
+        self.norme = math.sqrt((self.x)**2 + (self.y)**2)
     def __add__(self, other):
         return Vecteur(self.x + other.x, self.y + other.y)
     def __mul__(self, k):
@@ -75,7 +76,7 @@ class Vecteur:
         try:
             return math.degrees(math.acos((self.produit_scalaire(other))/(self.norme * other.norme)))
         except ZeroDivisionError:
-            return math.degrees(math.acos(self.produit_scalaire(other)))
+            return None
     def angle_radian(self, other):
         """
         Definit l'angle entre deux vecteurs en radian
