@@ -16,7 +16,7 @@ for point in range(10):
     p = cp.Point(dictPoint)
     #p.random_name(nameList, dictPoint)
     p.random(nameList, dictPoint)
-    p.tracer("N")
+    p.tracage("N")
     liste.append(p)
 
 
