@@ -13,6 +13,9 @@ class Vecteur:
     def __add__(self, other):
         return Vecteur(self.x + other.x, self.y + other.y)
     def colineaire(self, other):
+        """
+        Verifie si deux vecteurs sont colinéaires, renvoie True si c'est vrai, sinon renvoie False
+        """
         try:
             k = [self.x/other.x, self.y/other.y]
         except ZeroDivisionError:
@@ -26,20 +29,21 @@ class Vecteur:
             return True
         else:
             return False
-        
-        
     def produit_scalaire(self, other):
-        print(((self+other).norme)**2)
-        print(self.norme**2)
-        print(other.norme**2)
-        produitScalaire = 1/2*(self.norme**2 + other.norme**2 - ((self+other).norme)**2) 
-        return fonc.int_decimal(produitScalaire)
-
+        """
+        Calcule le produit scalaire de deux vecteurs
+        """
+        return fonc.int_decimal(1/2*(self.norme**2 + other.norme**2 - round(((self+other).norme)**2, 4)))
+    def angle(self, other):
+        """
+        Definit l'angle entre deux vecteurs
+        """
+        return math.acos((produit_scalaire(self, other))/(self.norme * other.norme))
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
     a = Vecteur(1,0)
     b = Vecteur(0,1)
-    print(a.produit_scalaire(b))
+    print(a.angle(b))
     print("Fin du module.")
     while 1:
         os.system("pause")
