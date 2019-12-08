@@ -76,7 +76,7 @@ class Vecteur:
         try:
             return math.degrees(math.acos((self.produit_scalaire(other))/(self.norme * other.norme)))
         except ZeroDivisionError:
-            return None
+            return None # Car c'est un point
     def angle_radian(self, other):
         """
         Definit l'angle entre deux vecteurs en radian
