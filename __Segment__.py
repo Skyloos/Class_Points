@@ -18,7 +18,7 @@ class Segment:
         return longueur
 
 if __name__ == "__main__":
-    print("Lancement du module __classe__ en cours...")
+    print("Lancement du module __Segment__ en cours...")
     print("Fin du module.")
     while 1:
         os.system("pause")
