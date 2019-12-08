@@ -54,6 +54,10 @@ def liste_name(number):
     nameList = interList
     return nameList
 
+def arrondi(number):
+    if number == round(number,1):
+        return round(number,1)
+
 if __name__ == "__main__":
     print("Lancement du module __fonction__ en cours...")
     nameList = liste_name(10)
