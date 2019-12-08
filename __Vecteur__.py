@@ -16,6 +16,20 @@ class Vecteur:
         return Vecteur(self.x * k, self.y * k)
     def __rmul__(self, k):
         return Vecteur(self.x * k, self.y * k)
+    def tracage(self):
+        """
+        Trace le vecteur
+        """
+        tortue = fonc.tortue()
+        tortue.up()
+        tortue.home()
+        tortue.down()
+        tortue.goto(self.x,self.y)
+        tortue.up()
+        if self.y >= 0:
+            tortue.left(self.angle_degree(Vecteur(100,0)))
+        if self.y < 0:
+            tortue.right(self.angle_degree(Vecteur(100,0)))
     def colineaire(self, other):
         """
         Verifie si deux vecteurs sont colinéaires, renvoie True si c'est vrai, sinon renvoie False
@@ -52,20 +66,7 @@ class Vecteur:
         Definit l'angle entre deux vecteurs en radian
         """
         return math.acos((self.produit_scalaire(other))/(self.norme * other.norme))
-    def tracage(self):
-        """
-        Trace le vecteur
-        """
-        tortue = fonc.tortue()
-        tortue.up()
-        tortue.home()
-        tortue.down()
-        tortue.goto(self.x,self.y)
-        tortue.up()
-        if self.y >= 0:
-            tortue.left(self.angle_degree(Vecteur(100,0)))
-        if self.y < 0:
-            tortue.right(self.angle_degree(Vecteur(100,0)))
+
 
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
