@@ -10,6 +10,8 @@ class Segment:
         self.point1 = point1
         self.point2 = point2
         self.x1, self.x2, self.y1, self.y2 = self.point1.x, self.point2.x, self.point1.y, self.point2.y
+    def __str__(self):
+        return "[{0}{1}]={2}".format(self.point1.name, self.point2.name, longueur(self))
     def longueur(self):
         """
         Envoie la longueur du segment
