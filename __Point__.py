@@ -61,7 +61,7 @@ class Point:
         dictPoint[str(self.name)] = self
         return self
     
-    def tracer(self, information= "O"):
+    def tracage(self, information= "O"):
         """
         Trace le point dans le repere
         """
@@ -134,7 +134,7 @@ class Point:
         Milieu_name += "]"
         Milieu = Point(dictPoint, Milieu_name, Milieu_x, Milieu_y)
         dictPoint[str(Milieu_name)] = Milieu
-        Milieu.tracer(information)
+        Milieu.tracage(information)
         return Milieu
     def barycentre(self, dictPoint, information= "O", *other):
         """
@@ -163,7 +163,7 @@ class Point:
         Bary_name += "]"
         Bary = Point(dictPoint, Bary_name, Bary_x, Bary_y)
         dictPoint[str(Bary_name)] = Bary
-        Bary.tracer(information)
+        Bary.tracage(information)
         return Bary
 
 
@@ -174,10 +174,10 @@ if __name__ == "__main__":
     nameList = fonc.liste_name(2)
     a = Point(dictPoint)
     a.random(nameList, dictPoint)
-    a.tracer()
+    a.tracage()
     b = Point(dictPoint)
     b.random(nameList, dictPoint)
-    b.tracer()
+    b.tracage()
     a.liage(b)
     AB = cs.Segment(a,b)
     longueur = AB.longueur()
