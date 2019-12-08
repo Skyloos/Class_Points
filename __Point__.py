@@ -67,7 +67,6 @@ class Point:
         """
         tortue = fonc.tortue()
         tortue.speed("fastest")
-        tortue.tracer(3)
         tortue.up()
         tortue.goto(self.x, self.y)
         tortue.dot(5)
@@ -93,7 +92,6 @@ class Point:
             other.append(firstElement)
         tortue = fonc.tortue()
         tortue.speed("fastest")
-        tortue.tracer(3)
         tortue.up()
         tortue.goto(self.x, self.y)
         for point in range(len(other)):
