@@ -30,16 +30,16 @@ class Vecteur:
         
     def produit_scalaire(self, other):
         print(((self+other).norme)**2)
+        print(self.norme**2)
+        print(other.norme**2)
         produitScalaire = 1/2*(self.norme**2 + other.norme**2 - ((self+other).norme)**2) 
         return produitScalaire
 
 if __name__ == "__main__":
     print("Lancement du module __classe__ en cours...")
-    a = Vecteur(15,6)
-    b = Vecteur(2,5)
-    print(b.colineaire(a))
-    #print(a.produit_scalaire(b))
-    #print(b.produit_scalaire(a))
+    a = Vecteur(1,0)
+    b = Vecteur(0,1)
+    print(a.produit_scalaire(b))
     print("Fin du module.")
     while 1:
         os.system("pause")
