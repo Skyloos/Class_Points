@@ -1,5 +1,7 @@
 import math
 import os
+import turtle as ttl
+import __function__ as fonc
 
 class Vecteur:
     def __init__(self, x, y):
