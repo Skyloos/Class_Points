@@ -14,7 +14,7 @@ class Vecteur:
             dictVecteur[self.name] = self
     def __str__(self):
         return "({0},{1})".format(self.x, self.y)
-    def random(self, nameList, dictVecteur):
+    def random(self, nameList, dictVecteur={}):
         """
         Redefinit les caracteristiques du vecteur aleatoirement
         """ 
@@ -32,7 +32,7 @@ class Vecteur:
         return Vecteur(self.x * k, self.y * k)
     def __rmul__(self, k):
         return Vecteur(self.x * k, self.y * k)
-    def tracage(self, information= "O"):
+    def tracage(self, dictVecteur={}, information= "O"):
         """
         Trace le vecteur
         """
@@ -45,9 +45,9 @@ class Vecteur:
         if information == "O":
             tortue.write("V[" + str(self.name) + "]" + "\n" + "(" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")")
         if self.y >= 0:
-            tortue.left(self.angle_degree(Vecteur("", 100,0)))
+            tortue.left(self.angle_degree(Vecteur(dictVecteur, "", 100,0)))
         if self.y <= 0:
-            tortue.right(self.angle_degree(Vecteur("", 100,0)))
+            tortue.right(self.angle_degree(Vecteur(dictVecteur, "", 100,0)))
         fichier = open("data.txt", 'a')
         fichier.write("V[" + str(self.name) + "] : (" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")" + "\n")
         fichier.close()
@@ -96,9 +96,10 @@ if __name__ == "__main__":
     nameList = fonc.liste_name(2)
     a = Vecteur(dictVecteur)
     a.random(nameList, dictVecteur)
-    b = Vecteur(nameList[0], 0.5*a.x, 0.5*a.y)
-    a.tracage()
-    b.tracage()
+    b = Vecteur(dictVecteur, nameList[0], 0.5*a.x, 0.5*a.y)
+    a.tracage(dictVecteur)
+    b.tracage(dictVecteur)
+    print(dictVecteur)
     print("Fin du module.")
     while 1:
         os.system("pause")
