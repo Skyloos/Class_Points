@@ -2,7 +2,7 @@ import __Point__ as cp
 import os
 import math
 
-class Segment(cp.Point):
+class Segment:
     def __init__(self, point1, point2):
         """
         Definit les caracteristiques du point dans "self"
