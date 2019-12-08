@@ -1,6 +1,7 @@
 import __function__  as fonc
 import __Point__ as cp
 import __Segment__ as cs
+import __Vecteur__ as cv
 import os
 import random as rd
 
