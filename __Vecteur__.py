@@ -14,11 +14,18 @@ class Vecteur:
         try:
             k = [self.x/other.x, self.y/other.y]
         except ZeroDivisionError:
-            if other.x == 0:
-                k[0] = 0
-            if other.y == 0:
-                k[1] = 0
-        return tuple(k)
+            if other.x == 0 and other.y != 0:
+                k = [0, self.y/other.y]
+            elif other.y == 0 and other.x != 0:
+                k = [self.x/other.x, 0]
+            elif other.x == 0 and other.y == 0:
+                k = [0,0]
+        if k[0] == k[1] or k[0] == 0 or k[1] == 0:
+            return True
+        else:
+            return False
+        
+        
     def produit_scalaire(self, other):
         print(((self+other).norme)**2)
         produitScalaire = 1/2*(self.norme**2 + other.norme**2 - ((self+other).norme)**2) 
@@ -26,9 +33,9 @@ class Vecteur:
 
 if __name__ == "__main__":
     print("Lancement du module __classe__ en cours...")
-    a = Vecteur(1,0)
-    b = Vecteur(2,0)
-    print(a.colinéaire(b))
+    a = Vecteur(15,6)
+    b = Vecteur(2,5)
+    print(b.colinéaire(a))
     #print(a.produit_scalaire(b))
     #print(b.produit_scalaire(a))
     print("Fin du module.")
