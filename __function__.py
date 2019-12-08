@@ -66,5 +66,5 @@ def int_decimal(number):
 
 if __name__ == "__main__":
     print("Lancement du module __function__ en cours...")
-    print(arrondi(2.004))
+    print(int_decimal(2.004))
     print("Fin du module.")
