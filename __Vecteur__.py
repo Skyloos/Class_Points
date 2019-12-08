@@ -41,8 +41,8 @@ class Vecteur:
         return math.degrees(math.acos((self.produit_scalaire(other))/(self.norme * other.norme)))
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
-    a = Vecteur(1,0)
-    b = Vecteur(0,1)
+    a = Vecteur(1,1)
+    b = Vecteur(2,2)
     print(a.angle(b))
     print("Fin du module.")
     while 1:
