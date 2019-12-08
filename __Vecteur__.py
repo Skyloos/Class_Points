@@ -32,7 +32,7 @@ class Vecteur:
         return Vecteur(self.x * k, self.y * k)
     def __rmul__(self, k):
         return Vecteur(self.x * k, self.y * k)
-    def tracage(self):
+    def tracage(self, information= "O"):
         """
         Trace le vecteur
         """
@@ -42,7 +42,8 @@ class Vecteur:
         tortue.down()
         tortue.goto(self.x,self.y)
         tortue.up()
-        tortue.write("V[" + str(self.name) + "]" + "\n" + "(" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")")
+        if information == "O":
+            tortue.write("V[" + str(self.name) + "]" + "\n" + "(" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")")
         if self.y >= 0:
             tortue.left(self.angle_degree(Vecteur("", 100,0)))
         if self.y <= 0:
@@ -91,9 +92,10 @@ class Vecteur:
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
     fonc.clear_data()
+    dictVecteur = fonc.dictionnary_vecteur()
     nameList = fonc.liste_name(2)
-    a = Vecteur()
-    a.random(nameList)
+    a = Vecteur(dictVecteur)
+    a.random(nameList, dictVecteur)
     b = Vecteur(nameList[0], 0.5*a.x, 0.5*a.y)
     a.tracage()
     b.tracage()
