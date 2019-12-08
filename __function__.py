@@ -61,6 +61,8 @@ def arrondi(number):
     strNumber = str(number)
     if int(strNumber[strNumber.index('.')+1:]) == 0:
         return int(strNumber[:strNumber.index('.')])
+    else:
+        return number
 
 if __name__ == "__main__":
     print("Lancement du module __function__ en cours...")
