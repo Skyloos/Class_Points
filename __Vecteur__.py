@@ -37,10 +37,11 @@ class Vecteur:
         tortue.down()
         tortue.goto(self.x,self.y)
         tortue.up()
+        tortue.write("V[" + str(self.name) + "]" + "\n" + "(" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")")
         if self.y >= 0:
-            tortue.left(self.angle_degree(Vecteur(100,0)))
+            tortue.left(self.angle_degree(Vecteur("", 100,0)))
         if self.y <= 0:
-            tortue.right(self.angle_degree(Vecteur(100,0)))
+            tortue.right(self.angle_degree(Vecteur("", 100,0)))
         fichier = open("data.txt", 'a')
         fichier.write("V[" + str(self.name) + "] : (" + str(round(self.x, 1)) + ";" + str(round(self.y, 1)) + ")" + "\n")
         fichier.close()
