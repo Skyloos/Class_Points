@@ -36,7 +36,7 @@ class Vecteur:
         return produitScalaire
 
 if __name__ == "__main__":
-    print("Lancement du module __classe__ en cours...")
+    print("Lancement du module __Vecteur__ en cours...")
     a = Vecteur(1,0)
     b = Vecteur(0,1)
     print(a.produit_scalaire(b))
