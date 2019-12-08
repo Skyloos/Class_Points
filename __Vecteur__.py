@@ -5,14 +5,16 @@ import random as rd
 import __function__ as fonc
 
 class Vecteur:
-    def __init__(self, name="", x=0, y=0):
+    def __init__(self, dictVecteur={}, name="", x=0, y=0):
         self.name = name
         self.x = x
         self.y = y
         self.norme = math.sqrt((self.x)**2 + (self.y)**2)
+        if self.name != "":
+            dictVecteur[self.name] = self
     def __str__(self):
         return "({0},{1})".format(self.x, self.y)
-    def random(self, nameList):
+    def random(self, nameList, dictVecteur):
         """
         Redefinit les caracteristiques du vecteur aleatoirement
         """ 
@@ -22,6 +24,8 @@ class Vecteur:
         self.x = rd.randint(-250,250)
         self.y = rd.randint(-250,250)
         self.norme = math.sqrt((self.x)**2 + (self.y)**2)
+        dictVecteur[str(self.name)] = self
+        return self
     def __add__(self, other):
         return Vecteur(self.x + other.x, self.y + other.y)
     def __mul__(self, k):
