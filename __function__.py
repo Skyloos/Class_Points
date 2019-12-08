@@ -55,12 +55,14 @@ def liste_name(number):
     return nameList
 
 def arrondi(number):
-    strnumber = str(float(number))
-    if int(strNumber[strNumber.index('.'):]) == 0:
-        return round(number,1)
+    """
+    Permet de transformer un float en int ssi les decimales sont egales à 0
+    """
+    strNumber = str(number)
+    if int(strNumber[strNumber.index('.')+1:]) == 0:
+        return int(strNumber[:strNumber.index('.')])
 
 if __name__ == "__main__":
-    print("Lancement du module __fonction__ en cours...")
-    nameList = liste_name(10)
-    print(nameList)
+    print("Lancement du module __function__ en cours...")
+    print(arrondi(2.004))
     print("Fin du module.")
