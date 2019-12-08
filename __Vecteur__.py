@@ -36,10 +36,9 @@ class Vecteur:
         return fonc.int_decimal(1/2*(self.norme**2 + other.norme**2 - round(((self+other).norme)**2, 4)))
     def angle(self, other):
         """
-        Definit l'angle entre deux vecteurs
+        Definit l'angle entre deux vecteurs en degree
         """
-        help(colineaire())
-        return math.acos((produit_scalaire(self, other))/(self.norme * other.norme))
+        return math.degrees(math.acos((self.produit_scalaire(other))/(self.norme * other.norme)))
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
     a = Vecteur(1,0)
