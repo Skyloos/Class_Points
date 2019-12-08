@@ -12,6 +12,10 @@ class Vecteur:
         return "({0},{1})".format(self.x, self.y)
     def __add__(self, other):
         return Vecteur(self.x + other.x, self.y + other.y)
+    def __mul__(self, k):
+        return Vecteur(self.x * k, self.y * k)
+    def __rmul__(self, k):
+        return Vecteur(self.x * k, self.y * k)
     def colineaire(self, other):
         """
         Verifie si deux vecteurs sont colinéaires, renvoie True si c'est vrai, sinon renvoie False
@@ -65,12 +69,10 @@ class Vecteur:
 
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
-    a = Vecteur(20,100)
-    b = Vecteur(100,0)
+    a = Vecteur(10,-50)
+    b = Vecteur(3*a.x, 3*a.y)
     a.tracage()
     b.tracage()
-    print(a.angle_degree(b))
-    print(a.produit_scalaire(b))
     print("Fin du module.")
     while 1:
         os.system("pause")
