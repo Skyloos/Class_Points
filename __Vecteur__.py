@@ -39,16 +39,34 @@ class Vecteur:
         """
         Definit l'angle entre deux vecteurs en degree
         """
-        return math.degrees(math.acos((self.produit_scalaire(other))/(self.norme * other.norme)))
+        try:
+            return math.degrees(math.acos((self.produit_scalaire(other))/(self.norme * other.norme)))
+        except ZeroDivisionError:
+            return math.degrees(math.acos(self.produit_scalaire(other)))
     def angle_radian(self, other):
         """
         Definit l'angle entre deux vecteurs en radian
         """
         return math.acos((self.produit_scalaire(other))/(self.norme * other.norme))
+    def tracage(self):
+        """
+        Trace le vecteur
+        """
+        tortue = fonc.tortue()
+        tortue.up()
+        tortue.home()
+        tortue.left(self.angle_degree(Vecteur(100,0)))
+        tortue.down()
+        tortue.goto(self.x,self.y)
+        tortue.up()
+
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
-    a = Vecteur(-2,4)
-    b = Vecteur(6,4)
+    a = Vecteur(-40,20)
+    b = Vecteur(50,100)
+    a.tracage()
+    b.tracage()
+    print(a.angle_degree(b))
     print(a.produit_scalaire(b))
     print("Fin du module.")
     while 1:
