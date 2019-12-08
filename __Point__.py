@@ -17,7 +17,8 @@ class Point:
         self.x = x
         self.y = y
         self.masse = masse
-        dictPoint[self.name] = self
+        if self.name != "":
+            dictPoint[self.name] = self
     def __str__(self):
         return "{0}: ({1},{2}) m={3}".format(self.name, self.x, self.y, self.masse)
     def random(self, nameList, dictPoint):
@@ -174,14 +175,8 @@ if __name__ == "__main__":
     nameList = fonc.liste_name(2)
     a = Point(dictPoint)
     a.random(nameList, dictPoint)
-    a.tracage()
-    b = Point(dictPoint)
-    b.random(nameList, dictPoint)
-    b.tracage()
-    a.liage(b)
-    AB = cs.Segment(a,b)
-    longueur = AB.longueur()
-    print(longueur)
+    print(a)
+    print(dictPoint)
     print("Fin du module.")
     while 1:
         os.system("pause")
