@@ -38,6 +38,7 @@ class Vecteur:
         """
         Definit l'angle entre deux vecteurs
         """
+        help(colineaire())
         return math.acos((produit_scalaire(self, other))/(self.norme * other.norme))
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
