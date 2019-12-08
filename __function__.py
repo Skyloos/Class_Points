@@ -55,7 +55,8 @@ def liste_name(number):
     return nameList
 
 def arrondi(number):
-    if number == round(number,1):
+    strnumber = str(float(number))
+    if int(strNumber[strNumber.index('.'):]) == 0:
         return round(number,1)
 
 if __name__ == "__main__":
