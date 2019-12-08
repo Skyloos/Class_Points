@@ -1,6 +1,7 @@
 import math
 import os
 import turtle as ttl
+import random as rd
 import __function__ as fonc
 
 class Vecteur:
@@ -11,6 +12,15 @@ class Vecteur:
         self.norme = math.sqrt((self.x)**2 + (self.y)**2)
     def __str__(self):
         return "({0},{1})".format(self.x, self.y)
+    def random(self, nameList):
+        """
+        Redefinit les caracteristiques du vecteur aleatoirement
+        """ 
+        nameNumber = rd.randint(0, len(nameList))
+        self.name = nameList[nameNumber-1]
+        del nameList[nameNumber-1]
+        self.x = rd.randint(-250,250)
+        self.y = rd.randint(-250,250)
     def __add__(self, other):
         return Vecteur(self.x + other.x, self.y + other.y)
     def __mul__(self, k):
@@ -74,8 +84,11 @@ class Vecteur:
 
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
-    a = Vecteur(10,-50)
-    b = Vecteur(3*a.x, 3*a.y)
+    fonc.clear_data()
+    nameList = fonc.liste_name(2)
+    a = Vecteur()
+    a.random(nameList)
+    b = Vecteur(nameList[0], 0.5*a.x, 0.5*a.y)
     a.tracage()
     b.tracage()
     print("Fin du module.")
