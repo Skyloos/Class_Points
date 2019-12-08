@@ -167,6 +167,8 @@ class Point:
         dictPoint[str(Bary_name)] = Bary
         Bary.tracage(information)
         return Bary
+    def vecteur(self, other):
+        v = cv.Vecteur("V["+ self.name + other.name + "]", other.x-self.x, other.y-self.y)
 
 
 if __name__ == "__main__":
