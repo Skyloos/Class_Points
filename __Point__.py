@@ -18,6 +18,8 @@ class Point:
         self.y = y
         self.masse = masse
         dictPoint[self.name] = self
+    def __str__(self):
+        return "{0}: ({1},{2}) m={3}".format(self.name, self.x, self.y, self.masse)
     def random(self, nameList, dictPoint):
         """
         Redefinit les caracteristiques du point aleatoirement
