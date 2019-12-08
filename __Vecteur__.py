@@ -7,7 +7,7 @@ class Vecteur:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.norme = math.sqrt(self.x**2 + self.y**2)
+        self.norme = math.sqrt((self.x)**2 + (self.y)**2)
     def __str__(self):
         return "({0},{1})".format(self.x, self.y)
     def __add__(self, other):
@@ -33,6 +33,7 @@ class Vecteur:
         """
         Calcule le produit scalaire de deux vecteurs
         """
+        print(self.x * other.x + self.y * other.y)
         return fonc.int_decimal(1/2*(self.norme**2 + other.norme**2 - round(((self+other).norme)**2, 4)))
     def angle(self, other):
         """
@@ -41,9 +42,9 @@ class Vecteur:
         return math.degrees(math.acos((self.produit_scalaire(other))/(self.norme * other.norme)))
 if __name__ == "__main__":
     print("Lancement du module __Vecteur__ en cours...")
-    a = Vecteur(1,1)
-    b = Vecteur(2,2)
-    print(a.angle(b))
+    a = Vecteur(-2,4)
+    b = Vecteur(6,4)
+    print(a.produit_scalaire(b))
     print("Fin du module.")
     while 1:
         os.system("pause")
