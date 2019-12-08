@@ -33,7 +33,7 @@ class Point:
         self.y = rd.randint(-250,250)
         self.masse = rd.randint(1,10)
         dictPoint[str(self.name)] = self
-        return(self)
+        return self
     def random_name(self, nameList, dictPoint):
         """
         Redefinit le nom du point aléatoirement
