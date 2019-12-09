@@ -38,6 +38,7 @@ class Fonction:
     def x(self,y):
         """
         Renvoie l'abscisse de la fonction avec comme paramètre y (donc f(x)) etant definit dans l'argument
+        Non fini
         """
         if len(self.coef) == 2:
             return eval("("+"(-" + str(self.coef[0]) +")+"+ "("+str(y)+")" + ")/("+ str(self.coef[1]) +")")
@@ -58,16 +59,16 @@ class Fonction:
         if len(self.coef) == 2:
             tortue = fonc.tortue()
             tortue.up()
-            tortue.goto(-200, self.y(-200))
+            tortue.goto(-180, self.y(-180))
             tortue.down()
-            tortue.goto(200, self.y(200))
+            tortue.goto(180, self.y(180))
             tortue.ht()
 
 
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
-    f = Fonction(5,2)
+    f = Fonction(50,-2)
     f.tracage()
     print("Fin du module.")
     while 1:
