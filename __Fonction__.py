@@ -59,6 +59,7 @@ class Fonction:
             tortue.up()
             tortue.goto(-300, self.y(-300))
             tortue.down()
+            tortue.goto(300, self.y(300))
             tortue.ht()
 
 
