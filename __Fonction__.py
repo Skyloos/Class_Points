@@ -49,7 +49,7 @@ class Fonction:
             strAlpha = "(" + str(alpha) + ")"
             beta = eval(self.chaine.replace("x", strAlpha))
             return (alpha, beta)
-    def tracage(self, nameList):
+    def tracage(self):
         """
         Trace la fonction
         Non fini
@@ -68,4 +68,5 @@ if __name__ == "__main__":
     f = Fonction(5,2)
     print(f)
     print(f.x(15))
+    f.tracage()
     print("Fin du module.")
