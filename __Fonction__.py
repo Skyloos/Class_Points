@@ -5,8 +5,6 @@ import turtle as ttl
 
 class Fonction:
     def __init__(self, *coef):
-        """
-        """
         self.coef = coef
 
         chaine = ""
@@ -31,10 +29,17 @@ class Fonction:
         return chaine
     def y(self,x):
         """
+        Renvoie l'ordonnee de la fonction avec comme paramètre x etant definit dans l'argument
         """
         if x < 0:
             x = "(" + str(x) + ")"
         return eval(self.chaine.replace("x", str(x)))
+    def x(self,y):
+        """
+        Renvoie l'abscisse de la fonction avec comme paramètre y (donc f(x)) etant definit dans l'argument
+        """
+        if len(self.coef) == 2:
+            return eval("("+"-" + str(self.coef[0]) +"+"+ "("+y+")" + ")/("+ str(self.coef[1]) +")")
     def extremum(self):
         """
         Renvoie l'abscisse et l'ordonnee de l'extremum de la fonction
