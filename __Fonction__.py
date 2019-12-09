@@ -39,7 +39,7 @@ class Fonction:
         Renvoie l'abscisse de la fonction avec comme paramètre y (donc f(x)) etant definit dans l'argument
         """
         if len(self.coef) == 2:
-            return eval("("+"-" + str(self.coef[0]) +"+"+ "("+y+")" + ")/("+ str(self.coef[1]) +")")
+            return eval("("+"(-" + str(self.coef[0]) +")+"+ "("+str(y)+")" + ")/("+ str(self.coef[1]) +")")
     def extremum(self):
         """
         Renvoie l'abscisse et l'ordonnee de l'extremum de la fonction
@@ -54,16 +54,17 @@ class Fonction:
         Trace la fonction
         Non fini
         """
-        if len(self.coef) == 1:
+        if len(self.coef) == 2:
             tortue = fonc.turtue()
             tortue.up()
-            tortue.goto(self.coef[0], self.y(self.coef[0]))
+            tortue.goto(-300, self.y(-300))
             tortue.down()
             tortue.ht()
 
 
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
-    f = Fonction(0,1,1)
-    print(f.y(f.extremum()[0]))
+    f = Fonction(5,2)
+    print(f)
+    print(f.x(15))
     print("Fin du module.")
