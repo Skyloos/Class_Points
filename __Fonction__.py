@@ -4,46 +4,55 @@ import turtle as ttl
 
 
 class Fonction:
-    def __init__(self, *para):
+    def __init__(self, *coef):
         """
         """
-        self.para = para
+        self.coef = coef
 
         chaine = ""
-        for element in range(len(self.para)):
+        for element in range(len(self.coef)):
             if element == 0:
-                chaine += str(self.para[element]) + "+"
-            elif self.para[element] < 0:
-                chaine += "(" + str(self.para[element]) + ")*x**" + str(element) + "+"
+                chaine += str(self.coef[element]) + "+"
+            elif self.coef[element] < 0:
+                chaine += "(" + str(self.coef[element]) + ")*x**" + str(element) + "+"
             else:
-                chaine += str(self.para[element]) + "*x**" + str(element) + "+"
+                chaine += str(self.coef[element]) + "*x**" + str(element) + "+"
         self.chaine = chaine[:-1]
     def __str__(self):
         chaine = ""
-        for element in range(len(self.para)):
+        for element in range(len(self.coef)):
             if element == 0:
-                chaine += str(self.para[element]) + "+"
-            elif self.para[element] < 0:
-                chaine += "(" + str(self.para[element]) + ")x**" + str(element) + "+"
+                chaine += str(self.coef[element]) + "+"
+            elif self.coef[element] < 0:
+                chaine += "(" + str(self.coef[element]) + ")x**" + str(element) + "+"
             else:
-                chaine += str(self.para[element]) + "x**" + str(element) + "+"
+                chaine += str(self.coef[element]) + "x**" + str(element) + "+"
         chaine = chaine[:-1]
         return chaine
     def y(self,x):
+        """
+        """
         if x < 0:
             x = "(" + str(x) + ")"
         return eval(self.chaine.replace("x", str(x)))
     def extremum(self):
+        """
+        Renvoie l'abscisse et l'ordonnee de l'extremum de la fonction
+        """
         if "x**2" in self.chaine:
-            alpha = (-self.para[1])/(2*self.para[2])
+            alpha = (-self.coef[1])/(2*self.coef[2])
             strAlpha = "(" + str(alpha) + ")"
             beta = eval(self.chaine.replace("x", strAlpha))
             return (alpha, beta)
     def tracage(self, nameList):
-        if len(self.para) == 1:
+        """
+        Trace la fonction
+        Non fini
+        """
+        if len(self.coef) == 1:
             tortue = fonc.turtue()
             tortue.up()
-            tortue.goto(self.para[0], self.y(self.para[0]))
+            tortue.goto(self.coef[0], self.y(self.coef[0]))
             tortue.down()
             tortue.ht()
 
