@@ -59,23 +59,11 @@ class Fonction:
             beta = eval(self.chaine.replace("x", strAlpha))
             return (alpha, beta)
     def tracage(self):
-        """
-        Trace la fonction
-        Non fini
-        if len(self.coef) == 2:
-            tortue = fonc.tortue()
-            tortue.up()
-            tortue.goto(-180, self.y(-180))
-            tortue.down()
-            tortue.goto(180, self.y(180))
-            tortue.ht()
-        else:
-        """
         tortue = fonc.tortue()
         tortue.speed("fastest")
         tortue.up()
         for i in range(-180,180):
-            tortue.goto(i/0.25, self.y(i)/0.25)
+            tortue.goto(i/0.5, self.y(i)/0.5)
             tortue.down()
             tortue.ht()
         tortue.up()
@@ -85,7 +73,7 @@ class Fonction:
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
-    f = Fonction(1,1,10)
+    f = Fonction(1,1,1,1,0)
     print(f)
     f.tracage()
     print("Fin du module.")
