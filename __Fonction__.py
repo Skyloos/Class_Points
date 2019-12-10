@@ -1,6 +1,6 @@
 import __Point__ as cp
 import __function__ as fonc
-#import turtle as ttl
+import turtle as ttl
 import os
 
 
@@ -41,7 +41,6 @@ class Fonction:
         """
         if x < 0:
             x = "(" + str(x) + ")"
-        print(self.chaine.replace("x", str(x)))
         return eval(self.chaine.replace("x", str(x)))
     def x(self,y):
         """
@@ -63,7 +62,6 @@ class Fonction:
         """
         Trace la fonction
         Non fini
-        """
         if len(self.coef) == 2:
             tortue = fonc.tortue()
             tortue.up()
@@ -72,21 +70,24 @@ class Fonction:
             tortue.goto(180, self.y(180))
             tortue.ht()
         else:
-            tortue = fonc.tortue()
-            tortue.up()
-            for i in range(-180,180):
-                tortue.down()
-                tortue.goto(i, self.y(i))
-                tortue.ht()
-            tortue.up()
+        """
+        tortue = fonc.tortue()
+        tortue.speed("fastest")
+        tortue.up()
+        for i in range(-180,180):
+            tortue.goto(i/0.25, self.y(i)/0.25)
+            tortue.down()
+            tortue.ht()
+        tortue.up()
 
 
 
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
-    f = Fonction(2,-2,-10)
+    f = Fonction(1,1,10)
     print(f)
+    f.tracage()
     print("Fin du module.")
     while 1:
         os.system("pause")
