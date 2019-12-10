@@ -9,23 +9,29 @@ class Fonction:
         self.coef = coef
 
         chaine = ""
-        for element in range(len(self.coef)):
-            element -= len(self.coef) - 1
-            if element == 0:
-                chaine += str(self.coef[element-1])
+        for element in range(0, len(self.coef)):
+            i =  -(element-(len(self.coef)-1)) 
+            if element == len(self.coef)-1:
+                if self.coef[element] < 0:
+                    chaine += "(" + str(self.coef[element]) + ")"
+                else:
+                    chaine += str(self.coef[element])
             elif self.coef[element] < 0:
-                chaine += "(" + str(self.coef[element-1]) + ")*x**" + str(element*(-1)) + "+"
+                chaine += "(" + str(self.coef[element]) + ")*x**" + str(i) + "+"
             else:
-                chaine += str(self.coef[element-1]) + "*x**" + str(element*(-1)) + "+"
+                chaine += str(self.coef[element]) + "*x**" + str(i) + "+"
         self.chaine = chaine
     def __str__(self):
         chaine = ""
         for element in range(0, len(self.coef)):
             i =  -(element-(len(self.coef)-1)) 
-            if self.coef[element] < 0:
-                element += "(" + str(self.coef[element]) + ")"
             if element == len(self.coef)-1:
-                chaine += str(self.coef[element])
+                if self.coef[element] < 0:
+                    chaine += "(" + str(self.coef[element]) + ")"
+                else:
+                    chaine += str(self.coef[element])
+            elif self.coef[element] < 0:
+                chaine += "(" + str(self.coef[element]) + ")x**" + str(i) + "+"
             else:
                 chaine += str(self.coef[element]) + "x**" + str(i) + "+"
         return chaine
@@ -79,7 +85,7 @@ class Fonction:
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
-    f = Fonction(2,-2,0)
+    f = Fonction(2,-2,-10)
     print(f)
     print("Fin du module.")
     while 1:
