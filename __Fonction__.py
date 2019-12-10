@@ -59,6 +59,9 @@ class Fonction:
             beta = eval(self.chaine.replace("x", strAlpha))
             return (alpha, beta)
     def tracage(self):
+        """
+        Trace la fonction
+        """
         tortue = fonc.tortue()
         tortue.speed("fastest")
         tortue.up()
