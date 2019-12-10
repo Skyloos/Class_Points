@@ -20,16 +20,14 @@ class Fonction:
         self.chaine = chaine
     def __str__(self):
         chaine = ""
-        for element in range(-len(self.coef), 0):
-            i = element * (-1)
-            i -= 1
-            print(element)
-            if element == 0:
+        for element in range(0, len(self.coef)):
+            i =  -(element-(len(self.coef)-1)) 
+            if element == len(self.coef)-1:
                 chaine += str(self.coef[element])
             elif self.coef[element] < 0:
-                chaine += "(" + str(self.coef[element]) + ")x**" + str(element) + "+"
+                chaine += "(" + str(self.coef[element]) + ")x**" + str(i) + "+"
             else:
-                chaine += str(self.coef[element]) + "x**" + str(element) + "+"
+                chaine += str(self.coef[element]) + "x**" + str(i) + "+"
         return chaine
     def y(self,x):
         """
@@ -83,7 +81,6 @@ if __name__ == "__main__":
     fonc.repere(fonc.tortue())
     f = Fonction(2,-2,0)
     print(f)
-    #f.tracage()
     print("Fin du module.")
     while 1:
         os.system("pause")
