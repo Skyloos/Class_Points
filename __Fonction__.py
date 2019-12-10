@@ -22,10 +22,10 @@ class Fonction:
         chaine = ""
         for element in range(0, len(self.coef)):
             i =  -(element-(len(self.coef)-1)) 
+            if self.coef[element] < 0:
+                element += "(" + str(self.coef[element]) + ")"
             if element == len(self.coef)-1:
                 chaine += str(self.coef[element])
-            elif self.coef[element] < 0:
-                chaine += "(" + str(self.coef[element]) + ")x**" + str(i) + "+"
             else:
                 chaine += str(self.coef[element]) + "x**" + str(i) + "+"
         return chaine
