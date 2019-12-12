@@ -91,7 +91,7 @@ class Fonction:
             tortue.down()
             tortue.ht()
         tortue.up()
-    def derive(self, n=1):
+    def derive(self, nombre_derive=1):
         """
         Cree la derivee de la fonction
         """
@@ -100,9 +100,8 @@ class Fonction:
             n = -(element-(len(self.coef)-1))
             coefDerive.append(n*self.coef[element])
         derive = Fonction(coefDerive)
-        for i in range(n-1):
+        for i in range(nombre_derive-1):
             derive = derive.derive()
-            print(derive.chaine)
         return derive
 
 
