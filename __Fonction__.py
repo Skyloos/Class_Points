@@ -9,15 +9,14 @@ class Fonction:
         self.coef = coef
 
         chaine = ""
+        if type(self.coef[0]) == list:
+            self.coef = list(self.coef)
+            otherKick = list(self.coef[0])
+            del self.coef[0]
+            for element in otherKick:
+                self.coef.append(element)
+            self.coef = tuple(self.coef)
         for element in range(0, len(self.coef)):
-            if type(self.coef[element]) == list:
-                self.coef = list(self.coef)
-                coefKick = list(self.coef[element])
-                del self.coef[element]
-                for element in coefKick:
-                    self.coef.append(element)
-                self.coef = tuple(self.coef)
-                print(self.coef)
             i =  -(element-(len(self.coef)-1)) 
             if element == len(self.coef)-1:
                 if self.coef[element] < 0:
@@ -31,6 +30,13 @@ class Fonction:
         self.chaine = chaine
     def __str__(self):
         chaine = ""
+        if type(self.coef[0]) == list:
+            self.coef = list(self.coef)
+            otherKick = list(self.coef[0])
+            del self.coef[0]
+            for element in otherKick:
+                self.coef.append(element)
+            self.coef = tuple(self.coef)
         for element in range(0, len(self.coef)):
             if type(self.coef[element]) == list:
                 self.coef = list(self.coef)
@@ -86,14 +92,14 @@ class Fonction:
             tortue.ht()
         tortue.up()
     def derive(self):
+        """
+        Cree la derivee de la fonction
+        """
         coefDerive = []
         for element in range(len(self.coef)-1):
             n = -(element-(len(self.coef)-1))
-            #print(n)
             coefDerive.append(n*self.coef[element])
         derive = Fonction(coefDerive)
-        #print(coefDerive)
-        #print(derive.chaine)
         return derive
 
 
@@ -102,11 +108,9 @@ if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
     f = Fonction(1,1,1,0)
-    g = Fonction(3,2,1)
     f.tracage()
-    g.tracage()
-    #print(f.derive())
-    f.derive().tracage()
+    print(f.derive().derive())
+    f.derive().derive().tracage()
     print("Fin du module.")
     while 1:
         os.system("pause")
