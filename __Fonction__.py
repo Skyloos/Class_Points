@@ -91,7 +91,7 @@ class Fonction:
             tortue.down()
             tortue.ht()
         tortue.up()
-    def derive(self):
+    def derive(self, n=1):
         """
         Cree la derivee de la fonction
         """
@@ -100,17 +100,21 @@ class Fonction:
             n = -(element-(len(self.coef)-1))
             coefDerive.append(n*self.coef[element])
         derive = Fonction(coefDerive)
+        for i in range(n-1):
+            derive = derive.derive()
+            print(derive.chaine)
         return derive
+
 
 
 
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
-    f = Fonction(1,1,1,0)
+    f = Fonction(1,1,1,1,1,0)
     f.tracage()
-    print(f.derive().derive())
-    f.derive().derive().tracage()
+    print(f.derive(5))
+    f.derive(5).tracage()
     print("Fin du module.")
     while 1:
         os.system("pause")
