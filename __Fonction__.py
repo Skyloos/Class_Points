@@ -10,6 +10,14 @@ class Fonction:
 
         chaine = ""
         for element in range(0, len(self.coef)):
+            if type(self.coef[element]) == list:
+                self.coef = list(self.coef)
+                coefKick = list(self.coef[element])
+                del self.coef[element]
+                for element in coefKick:
+                    self.coef.append(element)
+                self.coef = tuple(self.coef)
+                print(self.coef)
             i =  -(element-(len(self.coef)-1)) 
             if element == len(self.coef)-1:
                 if self.coef[element] < 0:
@@ -24,6 +32,13 @@ class Fonction:
     def __str__(self):
         chaine = ""
         for element in range(0, len(self.coef)):
+            if type(self.coef[element]) == list:
+                self.coef = list(self.coef)
+                coefKick = list(self.coef[element])
+                del self.coef[element]
+                for element in coefKick:
+                    self.coef.append(element)
+                self.coef = tuple(self.coef)
             i =  -(element-(len(self.coef)-1)) 
             if element == len(self.coef)-1:
                 if self.coef[element] < 0:
@@ -70,15 +85,28 @@ class Fonction:
             tortue.down()
             tortue.ht()
         tortue.up()
+    def derive(self):
+        coefDerive = []
+        for element in range(len(self.coef)-1):
+            n = -(element-(len(self.coef)-1))
+            #print(n)
+            coefDerive.append(n*self.coef[element])
+        derive = Fonction(coefDerive)
+        #print(coefDerive)
+        #print(derive.chaine)
+        return derive
 
 
 
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
-    f = Fonction(1,1,1,1,0)
-    print(f)
+    f = Fonction(1,1,1,0)
+    g = Fonction(3,2,1)
     f.tracage()
+    g.tracage()
+    #print(f.derive())
+    f.derive().tracage()
     print("Fin du module.")
     while 1:
         os.system("pause")
