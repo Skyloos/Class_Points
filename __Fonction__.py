@@ -112,8 +112,9 @@ if __name__ == "__main__":
     fonc.repere(fonc.tortue())
     f = Fonction(1,1,1,1,1,0)
     f.tracage()
-    print(f.derive(5))
-    f.derive(5).tracage()
+    print(f)
+    print(f.derive())
+    f.derive().tracage()
     print("Fin du module.")
     while 1:
         os.system("pause")
